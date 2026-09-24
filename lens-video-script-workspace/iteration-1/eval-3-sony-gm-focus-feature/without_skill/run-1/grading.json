@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "给出章节大纲",
+      "passed": true,
+      "evidence": "10 章大纲"
+    },
+    {
+      "text": "给出帧清单，并写明每帧需要准备的数据/图",
+      "passed": true,
+      "evidence": "约 50 帧镜头清单与准备清单"
+    },
+    {
+      "text": "写出了开场段落",
+      "passed": true,
+      "evidence": "写出前两章口播"
+    },
+    {
+      "text": "不编造具体性能数值或访谈原话（缺失处用【待填】）",
+      "passed": false,
+      "evidence": "规格表自行填入重量/片数等并以 ⚠ 标注不确定"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  }
+}

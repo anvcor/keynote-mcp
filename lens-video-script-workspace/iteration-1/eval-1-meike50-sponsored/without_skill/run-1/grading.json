@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "每段前都有 [图N：画面建议] 标记",
+      "passed": false,
+      "evidence": "用【PPT】标记，并非每段一帧"
+    },
+    {
+      "text": "包含送测声明",
+      "passed": true,
+      "evidence": "单独写了商业合作声明"
+    },
+    {
+      "text": "材料中的关键数据全部出现（190、0.55、31、9、165、88、98、16）",
+      "passed": false,
+      "evidence": "腰部 9 微米未以原文出现"
+    },
+    {
+      "text": "没有材料以外的新数值（人工核对脚本列出的可疑数字）",
+      "passed": true,
+      "evidence": "未见明显编造性能数值"
+    },
+    {
+      "text": "单位用中文（线对每毫米/微米），不用 lp/mm、μm",
+      "passed": false,
+      "evidence": "9 处 lp/mm 或 μm"
+    },
+    {
+      "text": "送测档不出现★贬损词（史、依托、不配上桌、蛤能、cjb 等）",
+      "passed": true,
+      "evidence": "无"
+    },
+    {
+      "text": "章节标题为『中文数字 + 空格 + 标题』格式",
+      "passed": false,
+      "evidence": "使用 '第一部分' / '1.1' 标题"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 4,
+    "total": 7,
+    "pass_rate": 0.43
+  }
+}

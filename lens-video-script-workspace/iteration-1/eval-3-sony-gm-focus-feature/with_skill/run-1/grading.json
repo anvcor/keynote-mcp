@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "给出章节大纲",
+      "passed": true,
+      "evidence": "六部分+结尾"
+    },
+    {
+      "text": "给出帧清单，并写明每帧需要准备的数据/图",
+      "passed": true,
+      "evidence": "图7–62 表格含'需要准备'列"
+    },
+    {
+      "text": "写出了开场段落",
+      "passed": true,
+      "evidence": "图1–6 开场正文"
+    },
+    {
+      "text": "不编造具体性能数值或访谈原话（缺失处用【待填】）",
+      "passed": true,
+      "evidence": "所有年份/片数/马达均为【待填/待确认】；引用的旧数值标注'以本次仿真为准'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  }
+}
