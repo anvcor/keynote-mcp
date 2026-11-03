@@ -1,0 +1,10 @@
+# local environment and generated files
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+test/out/
+test/.cache/
+test/测试文稿.key
+*.builds-tmp
+*.curves-tmp
