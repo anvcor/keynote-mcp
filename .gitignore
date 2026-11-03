@@ -8,3 +8,4 @@ test/.cache/
 test/测试文稿.key
 *.builds-tmp
 *.curves-tmp
+.build/

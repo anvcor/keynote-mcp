@@ -111,6 +111,17 @@ def main():
         failures.append("trace_mtf did not write 8 curves")
     step("read zemax mtf", "read_zemax_mtf", {"image": os.path.join(IMG, "85MIX inf FFTMTFvsField.jpg"), "fields": [0, 15.12]}, show=200)
 
+    # 6d. product intro slide (template slide 18 layout), one and two products
+    pc = step("product card x2", "product_card", {"after": 2, "products": [
+        {"image": os.path.join(IMG, "结构图.png"), "name": "Lens A 50mm F1.2", "badge": "Since 2025.05.20"},
+        {"image": os.path.join(IMG, "MTF.png"), "name": "Lens B 85mm F1.2", "badge": "¥2599"}]}, show=150)
+    if isinstance(pc, dict) and pc.get("slide"):
+        g = step("product card layout", "get_slide", {"slide": pc["slide"]}, show=80)
+        if isinstance(g, dict) and g.get("below_subtitle_line"):
+            failures.append("product card crosses the subtitle line")
+    step("product card x1", "product_card", {"products": [{"name": "Lens C 35mm F1.4", "badge": "Since 2026.01.01", "highlight": "1.4"}]}, show=80)
+    step("subtitle warning", "add_text", {"slide": 2, "text": "too low", "y": 1010}, show=200)
+
     # 7. notes from 文稿.md by [图N] tags (dry run, then write)
     script = os.path.join(HERE, "文稿.md")
     step("sync notes dry", "sync_notes_from_script", {"script_path": script, "dry_run": True})

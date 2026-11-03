@@ -1447,6 +1447,159 @@ def h_read_zemax_mtf(ctx, a):
                         fields=a.get("fields"), csv_path=csv_path)
 
 
+# --------------------------------------------------------------- product card --
+
+SUBTITLE_Y = 1000  # the author's horizontal guide: subtitles live below this line
+PRODUCT_SIGNATURE = "line,shape,text item,text item,image,image,text item,shape,text item"
+
+
+def _cutout(ctx, path):
+    """Background-removed, subject-cropped PNG via macOS Vision (same as Keynote's Remove Background)."""
+    import hashlib
+    exe = os.path.join(PROJECT_DIR, ".build", "kn-cutout")
+    src = os.path.join(PROJECT_DIR, "keynote_mcp", "cutout.swift")
+    if not os.path.exists(exe) or os.path.getmtime(exe) < os.path.getmtime(src):
+        os.makedirs(os.path.dirname(exe), exist_ok=True)
+        p = subprocess.run(["swiftc", "-O", "-o", exe, src], capture_output=True, text=True, timeout=300)
+        if p.returncode != 0:
+            raise RuntimeError("编译抠图工具失败（需要 Xcode 命令行工具）：%s" % p.stderr[-300:])
+    h = hashlib.md5((path + str(os.path.getmtime(path))).encode("utf-8")).hexdigest()[:8]
+    out_dir = os.path.join(_cache_dir(ctx), "抠图")
+    os.makedirs(out_dir, exist_ok=True)
+    out = os.path.join(out_dir, "%s-%s.png" % (os.path.splitext(os.path.basename(path))[0], h))
+    if os.path.exists(out):
+        return out, True
+    p = subprocess.run([exe, path, out], capture_output=True, text=True, timeout=120)
+    if p.returncode != 0 or not os.path.exists(out):
+        return path, False
+    return out, True
+
+
+def _find_product_sample(ctx, doc):
+    sc = Script(ctx, doc, guard=False)
+    sc.add(
+        'tell application "Keynote" to set c to count of slides of d',
+        "repeat with i from 1 to c",
+        'tell application "Keynote"',
+        "set s to slide i of d",
+        "set L to {}",
+        "repeat with itm in iWork items of s",
+        "set end of L to (class of itm) as text",
+        "end repeat",
+        "end tell",
+        'if my joinList(L, ",") is %s then return i' % sc.arg(PRODUCT_SIGNATURE),
+        "end repeat",
+        "return 0",
+    )
+    n = int(sc.run() or 0)
+    if not n:
+        raise ValueError("文稿里找不到产品介绍样例页（模板第 18 页）。用 create_presentation 从模板新建的文稿才有。")
+    return n
+
+
+def h_product_card(ctx, a):
+    prods = as_list(a.get("products"))
+    if not 1 <= len(prods) <= 2:
+        raise ValueError("products 放 1 或 2 款产品，例如 [{\"image\": \"…png\", \"name\": \"…\", \"badge\": \"Since 2025.05.20\"}]")
+    for p in prods:
+        if not p.get("name"):
+            raise ValueError("每款产品都要有 name")
+        if p.get("image"):
+            p["image"] = ctx.cfg.to_local(p["image"])
+            if not os.path.isfile(p["image"]):
+                raise ValueError("图片不存在：%s" % p["image"])
+    two = len(prods) == 2
+    arrow = a.get("arrow", two)
+    doc = a.get("document")
+    sample = _find_product_sample(ctx, doc)
+    # duplicate the sample and move the copy where it belongs
+    after = a.get("after")
+    sc = Script(ctx, doc, guard=True)
+    sc.add("set s to my getSlide(d, %d)" % sample, 'tell application "Keynote" to duplicate s to after s',
+           'tell application "Keynote" to set c to count of slides of d', 'return "{\\"count\\":" & c & "}"')
+    total = sc.run()["count"]
+    new = sample + 1
+    if after is not None and after != "end":
+        target = int(num(after, "after", lo=0, integer=True)) + (1 if int(after) < new else 0)
+        target = max(1, min(target, total))
+    else:
+        target = total
+    if target != new:
+        h_move_slide(ctx, {"document": doc, "slide": new, "to": target})
+    n = target
+    # original item order: 1 arrow, 2 badgeR, 3 badgeR text, 4 nameR, 5 imgL, 6 imgR, 7 nameL, 8 badgeL, 9 badgeL text
+    left, right = prods[0], (prods[1] if two else None)
+    delete = {5, 6}
+    if not two:
+        delete |= {2, 3, 4}
+    if not arrow:
+        delete.add(1)
+    if not left.get("badge"):
+        delete |= {8, 9}
+    if two and not right.get("badge"):
+        delete |= {2, 3}
+    keep = [i for i in range(1, 10) if i not in delete]
+    idx = {orig: keep.index(orig) + 1 for orig in keep}
+    cx_l, cx_r = (537.5, 1321.5) if two else (960.0, None)
+    sc = Script(ctx, doc, guard=True)
+    sc.add("set s to my getSlide(d, %d)" % n)
+    for k in sorted(delete, reverse=True):
+        sc.add('tell application "Keynote" to delete iWork item %d of s' % k)
+    sc.add('tell application "Keynote"')
+
+    def slot(prod, cx, name_i, badge_i, text_i):
+        sc.add("set t to iWork item %d of s" % idx[name_i], "set object text of t to %s" % sc.arg(prod["name"]))
+        if prod.get("highlight"):
+            sc.add("my highlightText(t, %s, %s)" % (sc.arg(prod["highlight"]), color16(HOUSE_RED)))
+        sc.add("set position of t to {round (%s - (width of t) / 2), 830}" % num(cx, "cx"))
+        if prod.get("badge"):
+            sc.add("set t to iWork item %d of s" % idx[text_i], "set object text of t to %s" % sc.arg(prod["badge"]),
+                   "set b to iWork item %d of s" % idx[badge_i],
+                   "set bw to (width of t) + 22",
+                   "if bw < 120 then set bw to 120",
+                   "set width of b to round bw",
+                   "set position of b to {round (%s - bw / 2), 926}" % num(cx, "cx"),
+                   "set position of t to {round (%s - (width of t) / 2), 938}" % num(cx, "cx"))
+    slot(left, cx_l, 7, 8, 9)
+    if two:
+        slot(right, cx_r, 4, 2, 3)
+    sc.add("end tell", 'return "ok"')
+    sc.run()
+    # product images: background removed, scaled to fit, bottom-aligned above the names
+    max_w, max_h, bottom = (560, 600, 690) if two else (900, 620, 700)
+    images = []
+    for prod, cx in ((left, cx_l), (right, cx_r)):
+        if not prod or not prod.get("image"):
+            continue
+        img, cut = (_cutout(ctx, prod["image"]) if a.get("remove_background", True) else (prod["image"], False))
+        sc = Script(ctx, doc, guard=True)
+        sc.add("set s to my getSlide(d, %d)" % n, 'tell application "Keynote"',
+               "tell s to set t to make new image with properties {file:(POSIX file %s)}" % sc.arg(img),
+               "set w to width of t", "set h to height of t",
+               "set k to %s / w" % num(max_w, "w"),
+               "if (%s / h) < k then set k to %s / h" % (num(max_h, "h"), num(max_h, "h")),
+               "set width of t to round (w * k)",
+               "set position of t to {round (%s - (width of t) / 2), round (%s - (height of t))}" % (num(cx, "cx"), num(bottom, "b")),
+               "set kk to count of iWork items of s", "end tell", "return my itemJSON(t, kk, false)")
+        it = sc.run()
+        it["background_removed"] = cut
+        images.append(it)
+    info = _slide_items(ctx, doc, n, full=False)
+    return {"slide": n, "items": info["items"], "images": images,
+            "note": "产品介绍页已按样例页（模板第 18 页）的版式生成：产品图底边对齐、产品名 38 号、灰色标签按文字长短自动加宽，"
+                    "全部在 y=%d 的字幕参考线以上。产品图已用 macOS 的主体识别去掉背景。" % SUBTITLE_Y}
+
+
+def _subtitle_warning(it):
+    try:
+        bottom = float(it.get("y", 0)) + float(it.get("height", 0))
+    except (TypeError, ValueError):
+        return it
+    if bottom > SUBTITLE_Y + 0.5:
+        it["warning"] = "这个对象伸到了字幕参考线（y=%d）以下，底边在 y=%.0f，视频里会和字幕重叠。" % (SUBTITLE_Y, bottom)
+    return it
+
+
 # ------------------------------------------------------------------ export --
 
 def _default_export_path(ctx, deck, fmt):
@@ -1848,6 +2001,18 @@ TOOLS = [
      _schema({"image": {"type": "string"}, "x_max": {"type": "number"},
               "fields": {"type": "array", "items": {"type": "number"}},
               "csv_path": {"type": "string", "description": "把整条曲线的数据存成 CSV"}}, ["image"]), h_read_zemax_mtf),
+    ("product_card", "做产品介绍页（你视频前段那种）：白底产品图（自动去背景）、产品名、灰色圆角标签（发布日期 Since… 或价格），"
+                     "1 款居中，2 款左右并排、中间一条箭头。版式照搬模板第 18 页（松若85 那页），全部在 y=1000 字幕参考线以上。",
+     _schema({"document": DOC,
+              "products": {"type": "array", "items": _schema({
+                  "image": {"type": "string", "description": "产品图（白底或已去背景的 png/jpg）"},
+                  "name": {"type": "string", "description": "如 SongRaw AF 85mm F1.2"},
+                  "badge": {"type": "string", "description": "标签文字：Since 2026.07.08 或价格；不填则不要标签"},
+                  "highlight": {"type": "string", "description": "名字里要标红的部分，可选"}}, ["name"])},
+              "after": {"type": "integer", "minimum": 0, "description": "放在第几页之后，不填 = 末尾"},
+              "arrow": {"type": "boolean", "description": "两款之间的箭头，两款时默认 true"},
+              "remove_background": {"type": "boolean", "description": "用 macOS 主体识别去背景，默认 true"}},
+             ["products"]), h_product_card),
     ("image_slides", "用一批图片直接生成一组新页（加在末尾），适合仿真截图、MTF 图。",
      _schema({"document": DOC, "paths": {"type": "array", "items": {"type": "string"}},
               "set_titles": {"type": "boolean", "description": "用文件名作标题"}}, ["paths"]), h_image_slides),
@@ -1903,6 +2068,9 @@ def tool_list(cfg):
 HANDLERS = {name: h for name, _d, _s, h in TOOLS}
 
 
+SUBTITLE_CHECKED = {"add_text", "add_image", "add_shape", "add_line", "add_table", "update_item"}
+
+
 def call(ctx, name, args):
     h = HANDLERS.get(name)
     if not h:
@@ -1913,4 +2081,11 @@ def call(ctx, name, args):
         _job_status(ctx, job)
         if ctx.running_job():
             raise RuntimeError("正在导出视频（任务 %s），导出期间不能操作 Keynote。请用 export_status 查看进度。" % job["id"])
-    return h(ctx, args or {})
+    r = h(ctx, args or {})
+    if name in SUBTITLE_CHECKED and isinstance(r, dict):
+        r = _subtitle_warning(r)
+    if name == "get_slide" and isinstance(r, dict):
+        below = [i["item"] for i in r.get("items", []) if "warning" in _subtitle_warning(dict(i))]
+        if below:
+            r["below_subtitle_line"] = {"y": SUBTITLE_Y, "items": below}
+    return r
