@@ -108,7 +108,7 @@ claude mcp add keynote --scope user -e KEYNOTE_MCP_ROOTS=/Users/anvcor/KeynoteMC
 - `create_presentation` 会把 `templates/KEYNOTE动画模板.json` 里的这份说明（每页是什么、哪些文字对象可以改）一起返回给 Claude。
 - 改文字时，F 值数字可以用 `highlight` 标成你的红色 #FC4B3E。
 - 复制样例页时，页上的构件动画会一起保留。
-- **改不了的**：曲线和光线是 Keynote 原生的贝塞尔形状，脚本只能改位置、大小、透明度，改不了形状，新曲线仍由你粘贴；标题里的「β=…」是公式图片，改不了数值。
+- **曲线**：MTF 图（第 14 页）的曲线可以用 `trace_mtf` 按 Zemax 导出图自动描（见下一节）；纵向像差图和光路图的曲线脚本还改不了形状，仍由你描。标题里的「β=…」是公式图片，改不了数值。
 - 做完后，Claude 会删掉没用到的样例页和多余的空白页。
 - 你更新了初始文件以后，把新版复制到 `templates/KEYNOTE动画模板.key` 覆盖旧的；页的顺序有变化的话，同时改一下旁边的 `.json` 说明。也可以用环境变量 `KEYNOTE_MCP_TEMPLATE` 指向别的模板。
 
@@ -326,8 +326,8 @@ keynote-mcp/
     builds.py            把构件动画写进 .key（需要 .venv 里的 keynote-parser）
     zemax_mtf.py         识别 Zemax FFT MTF vs Field 图里的曲线（需要 .venv 里的 Pillow）
     curves.py            把识别出的曲线拟合成贝塞尔，写进图表页的曲线
-  .venv/                 keynote-parser（只给 add_builds / list_builds 用）
     mp4info.py           读视频时长、帧率（只在开启视频导出时用到）
+  .venv/                 keynote-parser 和 Pillow（给 add_builds / list_builds / trace_mtf 用，不进仓库）
   templates/             你的初始模板 KEYNOTE动画模板.key 和每页说明 .json
   test/                  真机测试脚本、测试素材和输出
   方案.md                 方案和 Windows 评估
