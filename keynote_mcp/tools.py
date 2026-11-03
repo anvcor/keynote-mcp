@@ -1601,6 +1601,43 @@ def _subtitle_warning(it):
     return it
 
 
+def h_list_references(ctx, a):
+    from . import references as RF
+    cat = RF.load(rebuild=bool(a.get("rebuild")))
+    decks = cat.get("decks", [])
+    q = (a.get("project") or "").strip()
+    kind = (a.get("kind") or "").strip()
+    absp = lambda rel: os.path.join(RF.REF_DIR, rel)
+    if not q:
+        out = {"reference_dir": RF.REF_DIR, "decks": [
+            {"project": d["project"], "file": absp(d["file"]), "modified": d["modified"], "slides": d["slides"],
+             "kinds": {k: len(v) for k, v in d["by_kind"].items()}, "contact_sheet": absp(d["contact_sheet"])}
+            for d in sorted(decks, key=lambda d: d["modified"], reverse=True)],
+            "note": "这些是作者近期的成品文稿，当参考素材用。传 project（课题名的一部分）看逐页清单，kind 只看某类页面，"
+                    "with_sheet=true 返回缩略图目录。要细看某页就 open_presentation 打开它（会自动复制一份，不会改到参考文稿）。"}
+        if kind:
+            out["matches"] = [{"project": d["project"], "slides": d["by_kind"].get(kind, [])} for d in decks if d["by_kind"].get(kind)]
+        return out
+    hits = [d for d in decks if q in d["project"] or q in d["file"]]
+    if not hits:
+        raise ValueError("references 里没有和「%s」匹配的课题。可选：%s" % (q, "、".join(d["project"] for d in decks)))
+    d = hits[0]
+    rows = d["slide_list"] if not kind else [x for x in d["slide_list"] if x["kind"] == kind]
+    rows = [x for x in rows if x["kind"] != "空白页"] if not kind else rows
+    out = {"project": d["project"], "file": absp(d["file"]), "slides": d["slides"], "kinds": d["by_kind"],
+           "slide_list": rows, "contact_sheet": absp(d["contact_sheet"]),
+           "note": "slide_list 省略了空白页。要复用某页的版式：open_presentation 打开这份文稿（自动复制），get_slide / view_slide 细看。"}
+    if a.get("with_sheet"):
+        tmp = tempfile.mkdtemp(prefix="sheet-", dir=_cache_dir(ctx))
+        jpg = os.path.join(tmp, "sheet.jpg")
+        subprocess.run(["sips", "-Z", str(int(a.get("max_size", 1600))), "-s", "format", "jpeg", absp(d["contact_sheet"]), "--out", jpg],
+                       capture_output=True)
+        data = open(jpg, "rb").read()
+        shutil.rmtree(tmp, ignore_errors=True)
+        out["__content__"] = [{"type": "image", "data": base64.b64encode(data).decode("ascii"), "mimeType": "image/jpeg"}]
+    return out
+
+
 # ------------------------------------------------------------------ export --
 
 def _default_export_path(ctx, deck, fmt):
@@ -2015,6 +2052,12 @@ TOOLS = [
               "after": {"type": "integer", "minimum": 0, "description": "放在第几页之后，不填 = 末尾"},
               "arrow": {"type": "boolean", "description": "两款之间的箭头，两款时默认 true"}},
              ["products"]), h_product_card),
+    ("list_references", "查看作者近期成品文稿（项目 references/ 文件夹里的 .key 参考素材）：每份的页数、各类页面（章节卡、MTF 图、纵向像差图、"
+                        "频响图、产品介绍页……）在第几页、每页的主要文字，以及缩略图目录。做新页前可以先找找他以前怎么做的。",
+     _schema({"project": {"type": "string", "description": "课题名的一部分，如 85MIX2、松若85；不填则列出全部"},
+              "kind": {"type": "string", "description": "只看某类页面：章节卡 / FFT MTF vs Field 图 / 纵向像差图 / 频响图 / 产品介绍页 / 曲线/结构图 / 图片页 / 图文页 / 文字页"},
+              "with_sheet": {"type": "boolean", "description": "把缩略图目录作为图片返回（需要 project）"},
+              "rebuild": {"type": "boolean", "description": "重新生成目录（加了新文稿后）"}}), h_list_references),
     ("image_slides", "用一批图片直接生成一组新页（加在末尾），适合仿真截图、MTF 图。",
      _schema({"document": DOC, "paths": {"type": "array", "items": {"type": "string"}},
               "set_titles": {"type": "boolean", "description": "用文件名作标题"}}, ["paths"]), h_image_slides),
@@ -2041,7 +2084,7 @@ TOOLS = [
      _schema({"code": {"type": "string"}, "timeout": {"type": "integer"}}, ["code"]), h_run_applescript),
 ]
 
-READ_ONLY = {"keynote_status", "list_themes", "get_deck", "get_slide", "view_slide", "export_status", "read_zemax_mtf", "list_builds"}
+READ_ONLY = {"keynote_status", "list_themes", "get_deck", "get_slide", "view_slide", "export_status", "read_zemax_mtf", "list_builds", "list_references"}
 
 
 EXPORT_DESC_NO_MOVIE = ("导出文稿：pdf、png/jpeg/tiff（逐页图片，存进一个文件夹，可直接当文稿配图）、pptx。"

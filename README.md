@@ -113,6 +113,19 @@ claude mcp add keynote --scope user -e KEYNOTE_MCP_ROOTS=/Users/anvcor/KeynoteMC
 - 做完后，Claude 会删掉没用到的样例页和多余的空白页。
 - 你更新了初始文件以后，把新版复制到 `templates/KEYNOTE动画模板.key` 覆盖旧的；页的顺序有变化的话，同时改一下旁边的 `.json` 说明。也可以用环境变量 `KEYNOTE_MCP_TEMPLATE` 指向别的模板。
 
+## 参考素材：近期成品文稿
+
+`references/` 里放着你近期的 8 份成品（2026-04 到 2026-09：仿真网站、老蛙 AF35MC、AFUL P8s、公差杂谈、松若85、水月雨流星、美科85MIX2、徕卡 AA 镜头设计），从移动硬盘复制而来，原稿没动。
+
+- `list_references` 列出每份的页数、各类页面在第几页（章节卡、FFT MTF 图、纵向像差图、频响图、产品介绍页、曲线/结构图……）、每页的主要文字，还能把缩略图目录（`目录图.jpg`，用 .key 里自带的缩略图拼成）作为图片给 Claude 看。
+- 要细看某页，就用 `open_presentation` 打开那份文稿。它不在允许修改的目录里，会自动复制一份再打开。
+- 加了新成品后，用 `list_references rebuild=true` 重新生成目录。
+- 仓库里只放目录（`references/catalog.json`、各课题的 `目录图.jpg`）和压缩包，原画质的 .key 只留在本机 `references/`。
+- `materials/key/` 和 `materials/pptx/` 里是每份成品的 .key，以及用 Keynote 导出的 .pptx（给 Windows 上的 PowerPoint 用）。
+  - **图片压缩过**：这些文稿 80% 以上是 JPG 照片，无损压缩只能小 1%，所以打包前把文稿里的大图长边限制在 2560 像素、JPG 质量 80，PNG 保留透明通道。P8S 从 75 MB 降到 14 MB，画质对照检查过，Keynote 正常打开。
+  - 8 份 .key 合计 1.1 GB、8 份 .pptx 合计 1.1 GB，压完一共 284 MB，每个压缩包都不到 30 MB，Windows 自带解压就能打开（清单见 `materials/说明.md`）。以后超过 95 MB 的会切成 `.zip.001`、`.zip.002`……（GitHub 单个文件上限 100 MB），用 7-Zip 打开 `.001`。
+  - 重新打包：`.venv/bin/python -m keynote_mcp.pack_materials`。
+
 ## 产品介绍页和字幕区
 
 **字幕区**：你的文稿里有一条横向参考线在 y=1000，下面是字幕位置。工具的版式都在这条线以上。加对象、改对象时，只要有东西的底边低于 y=1000，结果里会给出警告；`get_slide` 也会列出越线的对象。
@@ -196,6 +209,7 @@ claude mcp add keynote --scope user -e KEYNOTE_MCP_ROOTS=/Users/anvcor/KeynoteMC
 | `list_builds` | 列出每页已有的构件动画 |
 | `trace_mtf` | 按 Zemax FFT MTF vs Field 导出图自动描曲线，写进图表页现成的曲线并换好底图 |
 | `product_card` | 产品介绍页：Photoshop 抠好的产品图 + 产品名 + 灰色标签（日期或价格），1–2 款 |
+| `list_references` | 近期成品文稿的目录：每页类型、文字、缩略图目录 |
 | `read_zemax_mtf` | 只读出 Zemax MTF 图里的数值，可存 CSV |
 | `magic_move_step` | 一步神奇移动：复制当前页 → 改新页上的对象 → 原页转场设为神奇移动 |
 | `chapter_card` | 章节卡：空白 → 编号 + 标题（76 / 71 号，白色居中）→ 空白，0.5 秒神奇移动 |
@@ -343,9 +357,13 @@ keynote-mcp/
     builds.py            把构件动画写进 .key（需要 .venv 里的 keynote-parser）
     zemax_mtf.py         识别 Zemax FFT MTF vs Field 图里的曲线（需要 .venv 里的 Pillow）
     curves.py            把识别出的曲线拟合成贝塞尔，写进图表页的曲线
+    references.py        给 references/ 里的成品文稿生成目录和缩略图目录
+    pack_materials.py    把成品文稿压缩图片、打包、分卷，放进 materials/
     mp4info.py           读视频时长、帧率（只在开启视频导出时用到）
   .venv/                 keynote-parser 和 Pillow（给 add_builds / list_builds / trace_mtf 用，不进仓库）
   templates/             你的初始模板 KEYNOTE动画模板.key 和每页说明 .json
+  references/            近期成品文稿（.key 只在本机）、catalog.json、各课题 目录图.jpg
+  materials/             成品文稿的 .key 和 .pptx 分卷压缩包（给 Windows 用）
   test/                  真机测试脚本、测试素材和输出
   方案.md                 方案和 Windows 评估
 ```

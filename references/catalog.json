@@ -1,0 +1,7021 @@
+{
+ "built": "2026-11-03 16:50",
+ "decks": [
+  {
+   "project": "AFUL P8s",
+   "file": "AFUL P8s/P8S动画.key",
+   "mb": 75,
+   "modified": "2026-09-01",
+   "slides": 36,
+   "contact_sheet": "AFUL P8s/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     3,
+     6,
+     8,
+     10,
+     13,
+     15,
+     17,
+     19,
+     21,
+     23,
+     25,
+     27,
+     28,
+     29
+    ],
+    "图片页": [
+     2,
+     11,
+     12,
+     14,
+     16,
+     18
+    ],
+    "产品介绍页": [
+     4,
+     26
+    ],
+    "图文页": [
+     5,
+     7,
+     24,
+     33,
+     34
+    ],
+    "章节卡": [
+     9,
+     22
+    ],
+    "频响图": [
+     20
+    ],
+    "纵向像差图": [
+     30,
+     31
+    ],
+    "FFT MTF vs Field 图": [
+     32
+    ],
+    "曲线/结构图": [
+     35
+    ],
+    "文字页": [
+     36
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 2026.01.15",
+      "AFUL Performer 8S"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "图文页",
+     "texts": [
+      "2599¥",
+      "AFUL Performer 8S"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "图文页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "章节卡",
+     "texts": [
+      "耳机介绍及声电测量"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "频响图",
+     "texts": [
+      "20",
+      "Frequency in Logarithmic Hz",
+      "Frequency Response",
+      "100",
+      "1k",
+      "10k"
+     ],
+     "images": 1,
+     "curves": 2,
+     "builds": 6,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "章节卡",
+     "texts": [
+      "云试听对比环节"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "图文页",
+     "texts": [
+      "STEINBERG",
+      "UR44",
+      "Brüel & Kjær",
+      "Type 4199"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 2026.01.15",
+      "AFUL Performer 8S",
+      "SENNHEISER IE 900",
+      "Since 2021.05.10"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 33,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 34,
+     "kind": "图文页",
+     "texts": [
+      "森海味？",
+      "AFUL",
+      "Performer 8S"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 35,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 36,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  },
+  {
+   "project": "为徕卡设计新AA镜头？ 75 90F2AA设计",
+   "file": "为徕卡设计新AA镜头？ 75 90F2AA设计/AA镜头设计动画.key",
+   "mb": 96,
+   "modified": "2026-04-29",
+   "slides": 119,
+   "contact_sheet": "为徕卡设计新AA镜头？ 75 90F2AA设计/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     6,
+     8,
+     10,
+     13,
+     18,
+     24,
+     28,
+     31,
+     35,
+     39,
+     45,
+     47,
+     49,
+     56,
+     76,
+     82,
+     104,
+     106,
+     107,
+     108,
+     109
+    ],
+    "产品介绍页": [
+     2,
+     4,
+     9,
+     46
+    ],
+    "文字页": [
+     3,
+     5,
+     11,
+     12,
+     20,
+     22,
+     32,
+     33,
+     41,
+     43,
+     50,
+     51,
+     52,
+     53,
+     58,
+     60,
+     62,
+     64,
+     66,
+     68,
+     70,
+     72,
+     74,
+     77,
+     78,
+     81,
+     84,
+     86,
+     88,
+     90,
+     92,
+     94,
+     96,
+     98,
+     100,
+     102,
+     105,
+     111,
+     112,
+     117,
+     119
+    ],
+    "章节卡": [
+     7,
+     48
+    ],
+    "图文页": [
+     14,
+     15,
+     16,
+     25,
+     26,
+     27,
+     29,
+     30,
+     36,
+     37,
+     110,
+     116
+    ],
+    "曲线/结构图": [
+     17,
+     38,
+     54,
+     55,
+     79,
+     80,
+     118
+    ],
+    "图片页": [
+     19,
+     21,
+     23,
+     34,
+     40,
+     42,
+     44,
+     57,
+     59,
+     61,
+     63,
+     65,
+     67,
+     69,
+     71,
+     73,
+     75,
+     83,
+     85,
+     87,
+     89,
+     91,
+     93,
+     95,
+     97,
+     99,
+     101,
+     103
+    ],
+    "纵向像差图": [
+     113,
+     114
+    ],
+    "FFT MTF vs Field 图": [
+     115
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 1998",
+      "Since 2005",
+      "Leica APO-SUMMICRON-M",
+      "90mm F2 ASPH",
+      "Leica APO-SUMMICRON-M",
+      "75mm F2 ASPH"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "文字页",
+     "texts": [
+      "APO",
+      "ASPH"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 1998",
+      "Since 2005",
+      "Leica APO-SUMMICRON-M",
+      "90mm F2 ASPH",
+      "Leica APO-SUMMICRON-M",
+      "75mm F2 ASPH"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "文字页",
+     "texts": [
+      "A75AA",
+      "A90AA"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "章节卡",
+     "texts": [
+      "Leica M75AA、M90AA指标分析"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 1998",
+      "Since 2005",
+      "Leica APO-SUMMICRON-M",
+      "90mm F2 ASPH",
+      "Leica APO-SUMMICRON-M",
+      "75mm F2 ASPH"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "文字页",
+     "texts": [
+      "Technical Datasheet",
+      "Leica M75AA"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "文字页",
+     "texts": [
+      "Leica M75AA",
+      "Technical Datasheet"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "图文页",
+     "texts": [
+      "Leica APO-SUMMICRON-M 75mm F2 ASPH"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "图文页",
+     "texts": [
+      "Leica APO-SUMMICRON-M 75mm F2 ASPH"
+     ],
+     "images": 1,
+     "curves": 2,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "图文页",
+     "texts": [
+      "90mm",
+      "44mm"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "曲线/结构图",
+     "texts": [
+      "S-LAH55V",
+      "S-FPL53",
+      "S-NBH8",
+      "S-TIH23",
+      "S-LAH58",
+      "S-LAH58"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "Leica Apo-Summicron-M 75mm F2 Asph"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "Leica Apo-Summicron-M 75mm F2 Asph"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "Leica Apo-Summicron-M 75mm F2 Asph"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "Leica Apo-Summicron-M 75mm F2 Asph"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "Leica Apo-Summicron-M 75mm F2 Asph"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "文字页",
+     "texts": [
+      "Technical Datasheet",
+      "Leica M90AA"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 33,
+     "kind": "文字页",
+     "texts": [
+      "Technical Datasheet",
+      "Leica M90AA"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 34,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 35,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 36,
+     "kind": "图文页",
+     "texts": [
+      "Leica APO-SUMMICRON-M 90mm F2 ASPH"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 37,
+     "kind": "图文页",
+     "texts": [
+      "100mm",
+      "36mm"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 38,
+     "kind": "曲线/结构图",
+     "texts": [
+      "S-FPL51",
+      "S-FPL51",
+      "S-TIH11",
+      "S-TIH6",
+      "S-LAM60"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 39,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 40,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 41,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 42,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 43,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 44,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 45,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 46,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 1998",
+      "Since 2005",
+      "Leica APO-SUMMICRON-M",
+      "90mm F2 ASPH",
+      "Leica APO-SUMMICRON-M",
+      "75mm F2 ASPH"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 47,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 48,
+     "kind": "章节卡",
+     "texts": [
+      "A75AA、A90AA的光学设计"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 49,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 50,
+     "kind": "文字页",
+     "texts": [
+      "A75mm F2 AA"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 51,
+     "kind": "文字页",
+     "texts": [
+      "A75mm F2 AA"
+     ],
+     "images": 0,
+     "curves": 2,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 52,
+     "kind": "文字页",
+     "texts": [
+      "90mm",
+      "23.5mm"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 53,
+     "kind": "文字页",
+     "texts": [
+      "H-ZF72A",
+      "FCD915",
+      "H-FK61B",
+      "NBFD25"
+     ],
+     "images": 0,
+     "curves": 4,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 54,
+     "kind": "曲线/结构图",
+     "texts": [
+      "H-ZF72A",
+      "FCD915",
+      "H-FK61B",
+      "NBFD25",
+      "H-TF5",
+      "FCD600"
+     ],
+     "images": 0,
+     "curves": 6,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 55,
+     "kind": "曲线/结构图",
+     "texts": [
+      "H-ZF72A",
+      "FCD915",
+      "H-FK61B",
+      "NBFD25",
+      "H-TF5",
+      "FCD600"
+     ],
+     "images": 0,
+     "curves": 7,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 56,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 57,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 58,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 59,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 60,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 61,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 62,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 63,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 64,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 65,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 66,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 67,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 68,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 69,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 70,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 71,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 72,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 73,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 74,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 75,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 76,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 77,
+     "kind": "文字页",
+     "texts": [
+      "A90mm F2 AA"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 78,
+     "kind": "文字页",
+     "texts": [
+      "A90mm F2 AA"
+     ],
+     "images": 0,
+     "curves": 2,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 79,
+     "kind": "曲线/结构图",
+     "texts": [
+      "FDS16-W",
+      "H-ZLAF78B",
+      "H-LAK5A",
+      "FCD915",
+      "NBFD25",
+      "E-FD4L"
+     ],
+     "images": 0,
+     "curves": 7,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 80,
+     "kind": "曲线/结构图",
+     "texts": [
+      "FDS16-W",
+      "H-ZLAF78B",
+      "H-LAK5A",
+      "FCD915",
+      "NBFD25",
+      "E-FD4L"
+     ],
+     "images": 0,
+     "curves": 11,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 81,
+     "kind": "文字页",
+     "texts": [
+      "A 90mm F2 AA",
+      "Lens Datasheet"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 82,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 83,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 84,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 85,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 86,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 87,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 88,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 89,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 90,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 91,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 92,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 93,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 94,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 95,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 96,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 97,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 98,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 99,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 100,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 101,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 102,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 103,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 104,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 105,
+     "kind": "文字页",
+     "texts": [
+      "A75AA",
+      "A90AA"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 106,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 107,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 108,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 109,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 110,
+     "kind": "图文页",
+     "texts": [
+      "Leica APO-SUMMICRON-M 90mm F2 ASPH"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 111,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 112,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 113,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 114,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 115,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 116,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 117,
+     "kind": "文字页",
+     "texts": [
+      "设计APO ASPH镜头？"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 118,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 119,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  },
+  {
+   "project": "仿真网站",
+   "file": "仿真网站/仿真网站动画.key",
+   "mb": 76,
+   "modified": "2026-09-24",
+   "slides": 58,
+   "contact_sheet": "仿真网站/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     4,
+     7,
+     9,
+     11,
+     14,
+     16,
+     18,
+     20,
+     23,
+     25,
+     27,
+     29,
+     34,
+     36,
+     39,
+     41,
+     43,
+     45,
+     47,
+     49,
+     50,
+     51,
+     52
+    ],
+    "图片页": [
+     2,
+     3,
+     5,
+     6,
+     10,
+     12,
+     17,
+     19,
+     24,
+     26,
+     31,
+     32,
+     33,
+     35,
+     37,
+     38,
+     40,
+     46,
+     48
+    ],
+    "图文页": [
+     8,
+     13,
+     21,
+     22,
+     28,
+     44,
+     56
+    ],
+    "章节卡": [
+     15,
+     30
+    ],
+    "文字页": [
+     42,
+     58
+    ],
+    "纵向像差图": [
+     53,
+     54
+    ],
+    "FFT MTF vs Field 图": [
+     55
+    ],
+    "曲线/结构图": [
+     57
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "图片页",
+     "texts": [],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "图文页",
+     "texts": [
+      "7artisans",
+      "AF 135mm F1.8 MAX"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "图文页",
+     "texts": [
+      "Lens",
+      "Bench",
+      "https://anvcor.github.io/lens-bench/"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "章节卡",
+     "texts": [
+      "网站内容"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "图文页",
+     "texts": [
+      "Lens-Bench",
+      "Code V"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "图文页",
+     "texts": [
+      "F1.4",
+      "F2.8"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "图文页",
+     "texts": [
+      "24mm",
+      "32mm",
+      "40mm",
+      "52mm",
+      "67mm"
+     ],
+     "images": 6,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "章节卡",
+     "texts": [
+      "检验流行的说法"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 33,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 34,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 35,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 36,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 37,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 38,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 39,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 40,
+     "kind": "图片页",
+     "texts": [],
+     "images": 4,
+     "curves": 1,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 41,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 42,
+     "kind": "文字页",
+     "texts": [
+      "结尾"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 43,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 44,
+     "kind": "图文页",
+     "texts": [
+      "Lens",
+      "Bench",
+      "https://anvcor.github.io/lens-bench/"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 45,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 46,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 47,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 48,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 49,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 50,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 51,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 52,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 53,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 54,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 55,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 56,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 57,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 58,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  },
+  {
+   "project": "又双APO？ 美科AF 85mm F1.4 MIX II仿真及测量",
+   "file": "又双APO？ 美科AF 85mm F1.4 MIX II仿真及测量/85MIX2动画.key",
+   "mb": 381,
+   "modified": "2026-05-11",
+   "slides": 103,
+   "contact_sheet": "又双APO？ 美科AF 85mm F1.4 MIX II仿真及测量/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     3,
+     5,
+     7,
+     10,
+     12,
+     16,
+     25,
+     27,
+     29,
+     31,
+     34,
+     36,
+     38,
+     40,
+     42,
+     44,
+     47,
+     49,
+     52,
+     54,
+     57,
+     59,
+     61,
+     63,
+     72,
+     74,
+     77,
+     79,
+     81,
+     91,
+     94,
+     95,
+     96
+    ],
+    "图文页": [
+     2,
+     4,
+     50,
+     51,
+     60,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     78,
+     82,
+     83,
+     84,
+     85,
+     86,
+     87,
+     88,
+     89,
+     90,
+     100,
+     101
+    ],
+    "图片页": [
+     6,
+     28,
+     30,
+     32,
+     33,
+     35,
+     37,
+     48,
+     58,
+     62,
+     65,
+     80
+    ],
+    "产品介绍页": [
+     8,
+     9,
+     92,
+     93
+    ],
+    "章节卡": [
+     11,
+     26,
+     39
+    ],
+    "文字页": [
+     13,
+     14,
+     15,
+     17,
+     18,
+     19,
+     21,
+     24,
+     64,
+     103
+    ],
+    "曲线/结构图": [
+     20,
+     22,
+     23,
+     102
+    ],
+    "FFT MTF vs Field 图": [
+     41,
+     43,
+     53,
+     73,
+     99
+    ],
+    "纵向像差图": [
+     45,
+     46,
+     55,
+     56,
+     75,
+     76,
+     97,
+     98
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "图文页",
+     "texts": [
+      "APO级消色差？",
+      "Reviews",
+      "MEIKE MIX",
+      "AF 24mm F1.4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "图文页",
+     "texts": [
+      "MEIKE AF 24mm F1.4 MIX"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "产品介绍页",
+     "texts": [
+      "MEIKE AF 24mm F1.4 MIX",
+      "MEIKE AF 85mm F1.4 MIX II",
+      "Since 2026.05.20"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "产品介绍页",
+     "texts": [
+      "MEIKE AF 85mm F1.4 MIX II",
+      "Since 2026.05.20"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "章节卡",
+     "texts": [
+      "专利逆向及设计仿真"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "文字页",
+     "texts": [
+      "CN120539914A"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "文字页",
+     "texts": [
+      "CN120539914A"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "文字页",
+     "texts": [
+      "CN120539914A"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "文字页",
+     "texts": [
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "文字页",
+     "texts": [
+      "MEIKE AF 85mm F1.4 MIX II",
+      "G1",
+      "G2",
+      "G3"
+     ],
+     "images": 0,
+     "curves": 1,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "文字页",
+     "texts": [
+      "134.48mm",
+      "34.5mm"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "曲线/结构图",
+     "texts": [
+      "G1",
+      "G2",
+      "G3",
+      "H-ZF73",
+      "H-LAF53",
+      "FCD1"
+     ],
+     "images": 0,
+     "curves": 7,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "文字页",
+     "texts": [
+      "G1",
+      "G2",
+      "G3",
+      "H-QK3L"
+     ],
+     "images": 0,
+     "curves": 1,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "曲线/结构图",
+     "texts": [
+      "G1",
+      "G2",
+      "G3",
+      "FCD1",
+      "H-ZLAF90",
+      "FCD1"
+     ],
+     "images": 0,
+     "curves": 7,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "曲线/结构图",
+     "texts": [
+      "G1",
+      "G2",
+      "G3",
+      "FCD1",
+      "H-ZLAF90",
+      "FCD1"
+     ],
+     "images": 0,
+     "curves": 15,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "文字页",
+     "texts": [
+      "MEIKE AF 85mm F1.4 MIX II",
+      "Prototype Datasheet"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "章节卡",
+     "texts": [
+      "镜头外观"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 33,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 34,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 35,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 36,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 37,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 38,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 39,
+     "kind": "章节卡",
+     "texts": [
+      "成像性能仿真及测量和实拍图"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 40,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 41,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "AF 85mm F1.4 MIX II",
+      "MEIKE",
+      "MTF vs Field"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 42,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 43,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 12,
+     "builds": 24,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 44,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 45,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.04",
+      "-0.032",
+      "-0.024",
+      "-0.016",
+      "-0.008",
+      "0.008"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 46,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.04",
+      "-0.032",
+      "-0.024",
+      "-0.016",
+      "-0.008",
+      "0.008"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 47,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 48,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 49,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 50,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 51,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 52,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 53,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 12,
+     "builds": 24,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 54,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 55,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.04",
+      "-0.032",
+      "-0.024",
+      "-0.016",
+      "-0.008",
+      "0.008"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 56,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.04",
+      "-0.032",
+      "-0.024",
+      "-0.016",
+      "-0.008",
+      "0.008"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 57,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 58,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 59,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 60,
+     "kind": "图文页",
+     "texts": [
+      "AF 85mm F1.4 MIX II",
+      "MEIKE",
+      "Focusing IN 4m@F1.4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 61,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 62,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 63,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 64,
+     "kind": "文字页",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 0,
+     "curves": 4,
+     "builds": 12,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 65,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 66,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 67,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 68,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 69,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 70,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 71,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 72,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 73,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 74,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 75,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 76,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 77,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 78,
+     "kind": "图文页",
+     "texts": [
+      "AF 85mm F1.4 MIX II",
+      "MEIKE",
+      "Focusing IN 1.5m@F1.4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 79,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 80,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 81,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 82,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 83,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 84,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 85,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 86,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 87,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 88,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 89,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 90,
+     "kind": "图文页",
+     "texts": [
+      "Shot on",
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 91,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 92,
+     "kind": "产品介绍页",
+     "texts": [
+      "MEIKE AF 85mm F1.4 MIX II",
+      "Since 2026.05.20"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 93,
+     "kind": "产品介绍页",
+     "texts": [
+      "MEIKE AF 85mm F1.4 MIX II",
+      "¥2880"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 94,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 95,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 96,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 97,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 98,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 99,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 100,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 101,
+     "kind": "图文页",
+     "texts": [
+      "MEIKE",
+      "AF 85mm F1.4 MIX II",
+      "美科",
+      "又是APO？"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 102,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 103,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  },
+  {
+   "project": "哇陨石 水月雨流星",
+   "file": "哇陨石 水月雨流星/流星动画.key",
+   "mb": 76,
+   "modified": "2026-06-14",
+   "slides": 39,
+   "contact_sheet": "哇陨石 水月雨流星/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     5,
+     7,
+     9,
+     12,
+     14,
+     16,
+     18,
+     20,
+     22,
+     24,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31
+    ],
+    "产品介绍页": [
+     2,
+     3,
+     4,
+     25
+    ],
+    "图文页": [
+     6,
+     23,
+     35,
+     36
+    ],
+    "章节卡": [
+     8,
+     21
+    ],
+    "图片页": [
+     10,
+     11,
+     13,
+     15,
+     17,
+     37
+    ],
+    "频响图": [
+     19
+    ],
+    "纵向像差图": [
+     32,
+     33
+    ],
+    "FFT MTF vs Field 图": [
+     34
+    ],
+    "曲线/结构图": [
+     38
+    ],
+    "文字页": [
+     39
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 2025.10.11",
+      "Since 2025.10.11",
+      "Since 2025.10.11",
+      "Since 2024.12.23",
+      "Moondrop Meteor"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "产品介绍页",
+     "texts": [
+      "¥2999",
+      "Moondrop Meteor"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "产品介绍页",
+     "texts": [
+      "@Leegeodesist",
+      "Since 2025.10.11",
+      "Since 2025.10.11",
+      "Since 2025.10.11",
+      "Since 2024.12.23",
+      "Moondrop Meteor"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "图文页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "章节卡",
+     "texts": [
+      "耳机介绍及声电测量"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "图片页",
+     "texts": [],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "频响图",
+     "texts": [
+      "20",
+      "Frequency in Logarithmic Hz",
+      "Frequency Response",
+      "100",
+      "1k",
+      "10k"
+     ],
+     "images": 1,
+     "curves": 2,
+     "builds": 6,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "章节卡",
+     "texts": [
+      "云试听对比环节"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "图文页",
+     "texts": [
+      "STEINBERG",
+      "UR44",
+      "Brüel & Kjær",
+      "Type 4199"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 2021.05.10",
+      "Since 2024.12.23",
+      "SENNHEISER IE 900",
+      "Moondrop Meteor"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 33,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 34,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 35,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 36,
+     "kind": "图文页",
+     "texts": [
+      "口圭！阝员石",
+      "水月雨流星云试听"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 37,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 38,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 39,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  },
+  {
+   "project": "抢先上岸 松若AF 85mm F1.2光学设计及实物讨论",
+   "file": "抢先上岸 松若AF 85mm F1.2光学设计及实物讨论/松若85动画.key",
+   "mb": 318,
+   "modified": "2026-07-07",
+   "slides": 87,
+   "contact_sheet": "抢先上岸 松若AF 85mm F1.2光学设计及实物讨论/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     5,
+     7,
+     9,
+     12,
+     14,
+     16,
+     18,
+     20,
+     24,
+     26,
+     28,
+     30,
+     32,
+     34,
+     36,
+     39,
+     41,
+     43,
+     46,
+     48,
+     51,
+     54,
+     57,
+     61,
+     64,
+     68,
+     72,
+     76,
+     78,
+     79
+    ],
+    "图文页": [
+     2,
+     3,
+     25,
+     31,
+     33,
+     40,
+     42,
+     47,
+     83,
+     84,
+     85
+    ],
+    "产品介绍页": [
+     4,
+     73,
+     74,
+     75
+    ],
+    "章节卡": [
+     6,
+     17
+    ],
+    "图片页": [
+     8,
+     10,
+     11,
+     13,
+     15,
+     19,
+     27,
+     35,
+     44,
+     45,
+     49,
+     50,
+     52,
+     53,
+     55,
+     56,
+     58,
+     59,
+     60,
+     62,
+     63,
+     65,
+     66,
+     67,
+     69,
+     70,
+     71,
+     77
+    ],
+    "文字页": [
+     21,
+     22,
+     87
+    ],
+    "曲线/结构图": [
+     23,
+     86
+    ],
+    "FFT MTF vs Field 图": [
+     29,
+     82
+    ],
+    "纵向像差图": [
+     37,
+     38,
+     80,
+     81
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "图文页",
+     "texts": [
+      "SongRaw",
+      "50mm F1.2",
+      "Moonlit",
+      "Reviews"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "图文页",
+     "texts": [
+      "SongRaw 50mm F1.2 Moonlit FE"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 2026.07.08",
+      "SongRaw AF 85mm F1.2",
+      "SongRaw 50mm F1.2 Moonlit FE"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "章节卡",
+     "texts": [
+      "镜头外观"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "章节卡",
+     "texts": [
+      "成像性能仿真及测量和实拍图"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "图片页",
+     "texts": [],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "文字页",
+     "texts": [
+      "SongRaw AF 85mm F1.2",
+      "Surface Datasheet"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "文字页",
+     "texts": [
+      "SongRaw AF 85mm F1.2",
+      "G3",
+      "G1",
+      "G2"
+     ],
+     "images": 0,
+     "curves": 1,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "曲线/结构图",
+     "texts": [
+      "G3",
+      "G1",
+      "G2",
+      "D-ZPK5-25",
+      "NBFD29",
+      "H-LAK52"
+     ],
+     "images": 0,
+     "curves": 11,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "图文页",
+     "texts": [
+      "AF 85mm F1.2",
+      "SongRaw"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 6,
+     "builds": 12,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "图文页",
+     "texts": [
+      "AF 85mm F1.2",
+      "SongRaw"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 33,
+     "kind": "图文页",
+     "texts": [
+      "SongRaw AF 85mm F1.2 Focusing IN 4m@F1.2"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 34,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 35,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 36,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 37,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.04",
+      "-0.032",
+      "-0.024",
+      "-0.016",
+      "-0.008",
+      "0.008"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 38,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.04",
+      "-0.032",
+      "-0.024",
+      "-0.016",
+      "-0.008",
+      "0.008"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 39,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 40,
+     "kind": "图文页",
+     "texts": [
+      "AF 85mm F1.2",
+      "SongRaw"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 41,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 42,
+     "kind": "图文页",
+     "texts": [
+      "SongRaw AF 85mm F1.2 Focusing IN 1.5m@F1"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 43,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 44,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 45,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 46,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 47,
+     "kind": "图文页",
+     "texts": [
+      "AF 85mm F1.2",
+      "SongRaw",
+      "AF 85mm F1.2",
+      "SongRaw"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 48,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 49,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 50,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 51,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 52,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 53,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 54,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 55,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 56,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 57,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 58,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 59,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 60,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 61,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 62,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 63,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 64,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 65,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 66,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 67,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 68,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 69,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 70,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 71,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 72,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 73,
+     "kind": "产品介绍页",
+     "texts": [
+      "Since 2026.07.08",
+      "SongRaw AF 85mm F1.2",
+      "SongRaw 50mm F1.2 Moonlit FE"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 74,
+     "kind": "产品介绍页",
+     "texts": [
+      "SongRaw AF 85mm F1.2",
+      "Since 2026.07.08"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 75,
+     "kind": "产品介绍页",
+     "texts": [
+      "SongRaw AF 85mm F1.2",
+      "¥3799"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 76,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 77,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 78,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 79,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 80,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 81,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 82,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 83,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 84,
+     "kind": "图文页",
+     "texts": [
+      "SongRaw",
+      "50mm F1.2",
+      "Moonlit",
+      "Reviews"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 85,
+     "kind": "图文页",
+     "texts": [
+      "SongRaw",
+      "85mm F1.2",
+      "Reviews"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 86,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 87,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  },
+  {
+   "project": "歪轴杂谈 镜头光学公差分析简述",
+   "file": "歪轴杂谈 镜头光学公差分析简述/公差视频动画.key",
+   "mb": 53,
+   "modified": "2026-07-20",
+   "slides": 32,
+   "contact_sheet": "歪轴杂谈 镜头光学公差分析简述/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     4,
+     8,
+     10,
+     12,
+     21,
+     23,
+     24,
+     25,
+     26
+    ],
+    "图片页": [
+     2,
+     3
+    ],
+    "文字页": [
+     5,
+     6,
+     15,
+     22,
+     32
+    ],
+    "图文页": [
+     7,
+     11,
+     13,
+     20,
+     30
+    ],
+    "章节卡": [
+     9
+    ],
+    "曲线/结构图": [
+     14,
+     16,
+     17,
+     18,
+     19,
+     31
+    ],
+    "纵向像差图": [
+     27,
+     28
+    ],
+    "FFT MTF vs Field 图": [
+     29
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "文字页",
+     "texts": [
+      "公差"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "文字页",
+     "texts": [
+      "公差",
+      "Tolerance",
+      "許容範囲"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "图文页",
+     "texts": [
+      "mm",
+      "尺寸公差",
+      "倾斜公差",
+      "Fringes",
+      "镜片表面半径公差",
+      "S+A"
+     ],
+     "images": 4,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "章节卡",
+     "texts": [
+      "公差项介绍"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "图文页",
+     "texts": [
+      "元件公差",
+      "表面公差",
+      "材料公差"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "图文页",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 2,
+     "curves": 12,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 12,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "文字页",
+     "texts": [
+      "MEIKE AF 85mm F1.4 MIX II"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "曲线/结构图",
+     "texts": [
+      "G1",
+      "G2",
+      "G3",
+      "FCD1",
+      "H-ZLAF90",
+      "FCD1"
+     ],
+     "images": 0,
+     "curves": 15,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 12,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "曲线/结构图",
+     "texts": [
+      "Decenter +Y"
+     ],
+     "images": 1,
+     "curves": 12,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "曲线/结构图",
+     "texts": [
+      "Decenter +Y",
+      "Tilt X"
+     ],
+     "images": 1,
+     "curves": 12,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "图文页",
+     "texts": [
+      "Decenter +Y",
+      "Tilt X"
+     ],
+     "images": 2,
+     "curves": 12,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  },
+  {
+   "project": "老蛙AF35MC",
+   "file": "老蛙AF35MC/老蛙AF35MC动画.key",
+   "mb": 123,
+   "modified": "2026-09-10",
+   "slides": 64,
+   "contact_sheet": "老蛙AF35MC/目录图.jpg",
+   "by_kind": {
+    "空白页": [
+     1,
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     21,
+     23,
+     25,
+     27,
+     30,
+     33,
+     35,
+     38,
+     41,
+     44,
+     48,
+     51,
+     54,
+     56,
+     57
+    ],
+    "图片页": [
+     2,
+     24,
+     26,
+     28,
+     29,
+     31,
+     32
+    ],
+    "图文页": [
+     4,
+     8,
+     12,
+     36,
+     37,
+     39,
+     40,
+     42,
+     43,
+     45,
+     46,
+     47,
+     49,
+     50,
+     52,
+     53,
+     55,
+     61,
+     62
+    ],
+    "文字页": [
+     6,
+     10,
+     14,
+     16,
+     17,
+     18,
+     20,
+     64
+    ],
+    "曲线/结构图": [
+     19,
+     63
+    ],
+    "章节卡": [
+     22,
+     34
+    ],
+    "纵向像差图": [
+     58,
+     59
+    ],
+    "FFT MTF vs Field 图": [
+     60
+    ]
+   },
+   "slide_list": [
+    {
+     "slide": 1,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 2,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 3,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 4,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 180mm F4.5 CA-Dreamer Macro 1.5"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 5,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 6,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 7,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 8,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 180mm F4.5 Macro 1.5X",
+      "Laowa AF 35mm F2.8 Macro 1X"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 9,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 10,
+     "kind": "文字页",
+     "texts": [
+      "光学设计",
+      "光学设计"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 11,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 12,
+     "kind": "图文页",
+     "texts": [
+      "CN222506648U",
+      "Laowa TS 55mm F2.8 Macro 1X"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 13,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 14,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 15,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 16,
+     "kind": "文字页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 17,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 18,
+     "kind": "文字页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X",
+      "G2a",
+      "G1",
+      "G2b",
+      "G2"
+     ],
+     "images": 0,
+     "curves": 3,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 19,
+     "kind": "曲线/结构图",
+     "texts": [
+      "G2a",
+      "G1",
+      "G2b",
+      "G2",
+      "TAFD34",
+      "H-QK3L"
+     ],
+     "images": 0,
+     "curves": 6,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 20,
+     "kind": "文字页",
+     "texts": [
+      "Laowa AF 35mm F2.8",
+      "Surface Datasheet",
+      "G2a",
+      "G1",
+      "G2b",
+      "G2"
+     ],
+     "images": 0,
+     "curves": 3,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 21,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 22,
+     "kind": "章节卡",
+     "texts": [
+      "镜头性能"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 23,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 24,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 25,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 26,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 27,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 28,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 29,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 30,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 31,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 32,
+     "kind": "图片页",
+     "texts": [],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 33,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 34,
+     "kind": "章节卡",
+     "texts": [
+      "实拍表现"
+     ],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 35,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 36,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 37,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 38,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 39,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F5.6"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 40,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F5.6"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 41,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 42,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 43,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 44,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 45,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 46,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 47,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F4"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 48,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 49,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F5.6"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 50,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F5.6"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 51,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 52,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F6.3"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 53,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 35mm F2.8 Macro 1X @ F6.3"
+     ],
+     "images": 1,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 54,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 55,
+     "kind": "图文页",
+     "texts": [
+      "Laowa AF 180mm F4.5 Macro 1.5X",
+      "Laowa AF 35mm F2.8 Macro 1X"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 56,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 57,
+     "kind": "空白页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 58,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 1,
+     "curves": 5,
+     "builds": 5,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 59,
+     "kind": "纵向像差图",
+     "texts": [
+      "-0.20",
+      "-0.16",
+      "-0.13",
+      "-0.08",
+      "-0.04",
+      "0.04"
+     ],
+     "images": 2,
+     "curves": 5,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 60,
+     "kind": "FFT MTF vs Field 图",
+     "texts": [
+      "2.16",
+      "4.3",
+      "6.5",
+      "8.64",
+      "10.8",
+      "12.96"
+     ],
+     "images": 1,
+     "curves": 8,
+     "builds": 16,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 61,
+     "kind": "图文页",
+     "texts": [
+      "FE 50mm F1.4",
+      "Or"
+     ],
+     "images": 3,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 62,
+     "kind": "图文页",
+     "texts": [
+      "AF 35mm F2.8",
+      "Macro 1X"
+     ],
+     "images": 2,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 63,
+     "kind": "曲线/结构图",
+     "texts": [
+      "SONY FE 50mm F1.4 GM"
+     ],
+     "images": 1,
+     "curves": 14,
+     "builds": 3,
+     "transition": "神奇移动",
+     "skipped": false
+    },
+    {
+     "slide": 64,
+     "kind": "文字页",
+     "texts": [],
+     "images": 0,
+     "curves": 0,
+     "builds": 0,
+     "transition": "神奇移动",
+     "skipped": false
+    }
+   ]
+  }
+ ]
+}

@@ -9,3 +9,7 @@ test/测试文稿.key
 *.builds-tmp
 *.curves-tmp
 .build/
+
+# reference decks: the raw .key/.pptx stay local, compressed split archives live in materials/
+references/**/*.key
+references/_pptx/
