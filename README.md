@@ -120,8 +120,8 @@ claude mcp add keynote --scope user -e KEYNOTE_MCP_ROOTS=/Users/anvcor/KeynoteMC
 **产品介绍页**（视频前段那种）用 `product_card`：
 
 - 版式照搬「松若85动画」第 4 页，已作为第 18 页复制进项目模板。复制时用的是本机副本，原稿没动。左侧标签原来是一个组合，脚本改不了里面的文字，所以在模板里取消了编组。
-- 每款产品给：白底产品图、产品名、标签文字（`Since 2026.07.08` 或价格）。
-- 产品图用 macOS Vision 的主体识别去背景并裁到主体，和 Keynote「移除背景」是同一套能力。抠图小程序 `keynote_mcp/cutout.swift` 第一次用时自动编译，需要 Xcode 命令行工具。
+- 每款产品给：产品图、产品名、标签文字（`Since 2026.07.08` 或价格）。
+- **产品图用你在 Photoshop 抠好的透明 PNG**。它们就在项目文件夹的「白底图」「白底产品样图」等文件夹里，工具直接读取，不做自动去背景（Keynote 和系统的自动去背景会留白边）。如果给的是不透明的白底图，图照样放上去，但结果里会提示先去 Photoshop 抠图；找不到抠好的图时，Claude 应该先问你。
 - 排版：
   - 1 款居中；2 款左右并排（中心 x=537 / 1321），中间一条箭头。
   - 产品图等比缩放、底边对齐；产品名 38 号；灰色圆角标签（#5E5E5E，圆角 15，文字 26 号）按文字长短自动加宽。
@@ -195,7 +195,7 @@ claude mcp add keynote --scope user -e KEYNOTE_MCP_ROOTS=/Users/anvcor/KeynoteMC
 | `add_builds` | 加构件动画：线条描绘、逐字淡入移动；出场方式可选点按、与上一个同时、在上一个之后 |
 | `list_builds` | 列出每页已有的构件动画 |
 | `trace_mtf` | 按 Zemax FFT MTF vs Field 导出图自动描曲线，写进图表页现成的曲线并换好底图 |
-| `product_card` | 产品介绍页：去背景的产品图 + 产品名 + 灰色标签（日期或价格），1–2 款 |
+| `product_card` | 产品介绍页：Photoshop 抠好的产品图 + 产品名 + 灰色标签（日期或价格），1–2 款 |
 | `read_zemax_mtf` | 只读出 Zemax MTF 图里的数值，可存 CSV |
 | `magic_move_step` | 一步神奇移动：复制当前页 → 改新页上的对象 → 原页转场设为神奇移动 |
 | `chapter_card` | 章节卡：空白 → 编号 + 标题（76 / 71 号，白色居中）→ 空白，0.5 秒神奇移动 |
@@ -324,7 +324,7 @@ python3 /Users/anvcor/Downloads/keynote-mcp/test/e2e_test.py
 - 导入 `test/素材/PPT导入测试.pptx`，检查平滑是否变成了神奇移动。
 - 给对象加线条描绘和逐字淡入移动，重新打开、另存、再保存后检查动画还在。
 - 用 `test/素材/85MIX inf FFTMTFvsField.jpg`（85MIX2 的 Zemax 导出图）描模板第 14 页的 MTF 曲线。
-- 生成一款和两款的产品介绍页，检查没有对象越过字幕线；故意把文字放到线下，检查会给出警告。
+- 生成一款和两款的产品介绍页，检查没有对象越过字幕线、不透明的产品图会提示先抠图；故意把文字放到线下，检查会给出警告。
 
 加上 `--movie` 参数会额外测试默认关闭的视频导出。
 
@@ -343,7 +343,6 @@ keynote-mcp/
     builds.py            把构件动画写进 .key（需要 .venv 里的 keynote-parser）
     zemax_mtf.py         识别 Zemax FFT MTF vs Field 图里的曲线（需要 .venv 里的 Pillow）
     curves.py            把识别出的曲线拟合成贝塞尔，写进图表页的曲线
-    cutout.swift         产品图去背景（macOS Vision），自动编译到 .build/
     mp4info.py           读视频时长、帧率（只在开启视频导出时用到）
   .venv/                 keynote-parser 和 Pillow（给 add_builds / list_builds / trace_mtf 用，不进仓库）
   templates/             你的初始模板 KEYNOTE动画模板.key 和每页说明 .json

@@ -1453,26 +1453,24 @@ SUBTITLE_Y = 1000  # the author's horizontal guide: subtitles live below this li
 PRODUCT_SIGNATURE = "line,shape,text item,text item,image,image,text item,shape,text item"
 
 
-def _cutout(ctx, path):
-    """Background-removed, subject-cropped PNG via macOS Vision (same as Keynote's Remove Background)."""
-    import hashlib
-    exe = os.path.join(PROJECT_DIR, ".build", "kn-cutout")
-    src = os.path.join(PROJECT_DIR, "keynote_mcp", "cutout.swift")
-    if not os.path.exists(exe) or os.path.getmtime(exe) < os.path.getmtime(src):
-        os.makedirs(os.path.dirname(exe), exist_ok=True)
-        p = subprocess.run(["swiftc", "-O", "-o", exe, src], capture_output=True, text=True, timeout=300)
-        if p.returncode != 0:
-            raise RuntimeError("编译抠图工具失败（需要 Xcode 命令行工具）：%s" % p.stderr[-300:])
-    h = hashlib.md5((path + str(os.path.getmtime(path))).encode("utf-8")).hexdigest()[:8]
-    out_dir = os.path.join(_cache_dir(ctx), "抠图")
-    os.makedirs(out_dir, exist_ok=True)
-    out = os.path.join(out_dir, "%s-%s.png" % (os.path.splitext(os.path.basename(path))[0], h))
-    if os.path.exists(out):
-        return out, True
-    p = subprocess.run([exe, path, out], capture_output=True, text=True, timeout=120)
-    if p.returncode != 0 or not os.path.exists(out):
-        return path, False
-    return out, True
+def _transparency(path):
+    """True if the image has a transparent background (Photoshop cut-out), False if opaque, None if unknown."""
+    try:
+        from . import zemax_mtf as _z
+        Image = _z._pil()
+        im = Image.open(path)
+        if im.mode not in ("RGBA", "LA") and not (im.mode == "P" and "transparency" in im.info):
+            return False
+        im = im.convert("RGBA")
+        w, h = im.size
+        corners = [im.getpixel((x, y))[3] for x, y in ((0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1))]
+        return sum(1 for a in corners if a < 16) >= 3
+    except Exception:
+        try:
+            out = subprocess.run(["sips", "-g", "hasAlpha", path], capture_output=True, text=True).stdout
+            return "hasAlpha: yes" in out if "hasAlpha" in out else None
+        except Exception:
+            return None
 
 
 def _find_product_sample(ctx, doc):
@@ -1571,7 +1569,8 @@ def h_product_card(ctx, a):
     for prod, cx in ((left, cx_l), (right, cx_r)):
         if not prod or not prod.get("image"):
             continue
-        img, cut = (_cutout(ctx, prod["image"]) if a.get("remove_background", True) else (prod["image"], False))
+        img = prod["image"]
+        transparent = _transparency(img)
         sc = Script(ctx, doc, guard=True)
         sc.add("set s to my getSlide(d, %d)" % n, 'tell application "Keynote"',
                "tell s to set t to make new image with properties {file:(POSIX file %s)}" % sc.arg(img),
@@ -1582,12 +1581,14 @@ def h_product_card(ctx, a):
                "set position of t to {round (%s - (width of t) / 2), round (%s - (height of t))}" % (num(cx, "cx"), num(bottom, "b")),
                "set kk to count of iWork items of s", "end tell", "return my itemJSON(t, kk, false)")
         it = sc.run()
-        it["background_removed"] = cut
+        if transparent is False:
+            it["warning"] = ("这张图不是透明背景（%s），放上去会带着白底。请先在 Photoshop 里抠好、存成透明 PNG 放进项目文件夹，"
+                             "再用 update_item 的 image 换掉。" % os.path.basename(img))
         images.append(it)
     info = _slide_items(ctx, doc, n, full=False)
     return {"slide": n, "items": info["items"], "images": images,
             "note": "产品介绍页已按样例页（模板第 18 页）的版式生成：产品图底边对齐、产品名 38 号、灰色标签按文字长短自动加宽，"
-                    "全部在 y=%d 的字幕参考线以上。产品图已用 macOS 的主体识别去掉背景。" % SUBTITLE_Y}
+                    "全部在 y=%d 的字幕参考线以上。产品图按原图放入（应是 Photoshop 抠好的透明 PNG），不做自动去背景。" % SUBTITLE_Y}
 
 
 def _subtitle_warning(it):
@@ -2001,17 +2002,18 @@ TOOLS = [
      _schema({"image": {"type": "string"}, "x_max": {"type": "number"},
               "fields": {"type": "array", "items": {"type": "number"}},
               "csv_path": {"type": "string", "description": "把整条曲线的数据存成 CSV"}}, ["image"]), h_read_zemax_mtf),
-    ("product_card", "做产品介绍页（你视频前段那种）：白底产品图（自动去背景）、产品名、灰色圆角标签（发布日期 Since… 或价格），"
-                     "1 款居中，2 款左右并排、中间一条箭头。版式照搬模板第 18 页（松若85 那页），全部在 y=1000 字幕参考线以上。",
+    ("product_card", "做产品介绍页（你视频前段那种）：产品图、产品名、灰色圆角标签（发布日期 Since… 或价格），"
+                     "1 款居中，2 款左右并排、中间一条箭头。版式照搬模板第 18 页（松若85 那页），全部在 y=1000 字幕参考线以上。"
+                     "产品图用作者在 Photoshop 抠好的透明 PNG（在项目文件夹的「白底图」「白底产品样图」等文件夹里），工具不做去背景；"
+                     "找不到抠好的图就先问作者，不要用白底原图。",
      _schema({"document": DOC,
               "products": {"type": "array", "items": _schema({
-                  "image": {"type": "string", "description": "产品图（白底或已去背景的 png/jpg）"},
+                  "image": {"type": "string", "description": "Photoshop 抠好的透明 PNG（项目文件夹里）"},
                   "name": {"type": "string", "description": "如 SongRaw AF 85mm F1.2"},
                   "badge": {"type": "string", "description": "标签文字：Since 2026.07.08 或价格；不填则不要标签"},
                   "highlight": {"type": "string", "description": "名字里要标红的部分，可选"}}, ["name"])},
               "after": {"type": "integer", "minimum": 0, "description": "放在第几页之后，不填 = 末尾"},
-              "arrow": {"type": "boolean", "description": "两款之间的箭头，两款时默认 true"},
-              "remove_background": {"type": "boolean", "description": "用 macOS 主体识别去背景，默认 true"}},
+              "arrow": {"type": "boolean", "description": "两款之间的箭头，两款时默认 true"}},
              ["products"]), h_product_card),
     ("image_slides", "用一批图片直接生成一组新页（加在末尾），适合仿真截图、MTF 图。",
      _schema({"document": DOC, "paths": {"type": "array", "items": {"type": "string"}},

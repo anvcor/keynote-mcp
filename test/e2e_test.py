@@ -115,6 +115,8 @@ def main():
     pc = step("product card x2", "product_card", {"after": 2, "products": [
         {"image": os.path.join(IMG, "结构图.png"), "name": "Lens A 50mm F1.2", "badge": "Since 2025.05.20"},
         {"image": os.path.join(IMG, "MTF.png"), "name": "Lens B 85mm F1.2", "badge": "¥2599"}]}, show=150)
+    if isinstance(pc, dict) and not all("warning" in im for im in pc.get("images", [])):
+        failures.append("opaque product images should warn to cut them out in Photoshop")
     if isinstance(pc, dict) and pc.get("slide"):
         g = step("product card layout", "get_slide", {"slide": pc["slide"]}, show=80)
         if isinstance(g, dict) and g.get("below_subtitle_line"):
