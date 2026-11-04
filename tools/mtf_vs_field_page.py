@@ -7,7 +7,7 @@
    saved spectrum "VOD"; `SPE name` only opens the spectrum option, so wavelengths and weights are set with WL / WTW / REF)
    and exports CODE V's own chart with `WGF PNG` (1600x953: the 老蛙 page aspect 1.678, so the chart text has the same relative size). The data table is saved next to it as text.
 2. A page is added to DECK after slide --after, copying the neighbouring page's dark background: a full-bleed white
-   rectangle and the CODE V chart (plus the brand / lens model in black, top right) at x 64.5, y 0.4, 1811.1 x 1079.3 (老蛙 page 26: "Rectangle" + "MTF_INF.jpg", no other text).
+   rectangle and the CODE V chart (plus the brand / lens model in black above the legend) at x 64.5, y 0.4, 1811.1 x 1079.3 (老蛙 page 26: "Rectangle" + "MTF_INF.jpg", no other text).
 """
 import argparse
 import os
@@ -73,18 +73,24 @@ def add_page(deck, after, png, brand=None, model=None):
     rect.Line.Visible = 0
     pic = s.Shapes.AddPicture(os.path.abspath(png), False, True, 64.5, 0.4, 1811.1, 1079.3)   # same box as 老蛙 page 26
     pic.Name = os.path.basename(png)
-    for text, top in ((brand, 34.6), (model, 94.8)):      # lens model, top right (same spot as the 老蛙 page 60 header, black on white)
+    # lens model: two black lines just above the chart's legend, left-aligned with the legend column, same font size and
+    # line pitch as the legend (27 pt, 40 px). Boxes are middle-anchored, so the line centre is top + height / 2.
+    for text, centre in ((brand, 338.0), (model, 378.0)):
         if text:
-            tb = s.Shapes.AddTextbox(1, 1617, top, 262, 42.2)
+            tb = s.Shapes.AddTextbox(1, 1553, centre - 41.5, 262, 83)
             tb.Name = text
-            tb.TextFrame.WordWrap = -1
-            r = tb.TextFrame.TextRange
+            f = tb.TextFrame
+            f.WordWrap = -1
+            f.VerticalAnchor = 3
+            f.MarginLeft = f.MarginTop = f.MarginBottom = f.MarginRight = 4
+            r = f.TextRange
             r.Text = text
             r.Font.Name = "Helvetica Neue"
-            r.Font.Size = 29
+            r.Font.Size = 27
             r.Font.Color.RGB = 0
-            r.ParagraphFormat.Alignment = 2
-            tb.Height = 42.2
+            r.ParagraphFormat.Alignment = 1
+            tb.Height = 83
+            tb.Top = centre - 41.5
     pres.Save()
     return s.SlideIndex
 
@@ -96,8 +102,8 @@ def main():
     ap.add_argument("--after", type=int, required=True, help="insert after this slide")
     ap.add_argument("--png-dir", required=True)
     ap.add_argument("--name", required=True, help="file name prefix, e.g. SONY_FE35GM")
-    ap.add_argument("--brand", help="top-right line 1, e.g. SONY")
-    ap.add_argument("--model", help="top-right line 2, e.g. FE 35mm F1.4 GM")
+    ap.add_argument("--brand", help="line 1 above the legend, e.g. SONY")
+    ap.add_argument("--model", help="line 2 above the legend, e.g. FE 35mm F1.4 GM")
     ap.add_argument("--freqs", type=float, nargs="+", default=[10, 30, 80])
     ap.add_argument("--spectrum", nargs="+", default=["656.3:10", "587.6:27", "546.1:29", "486.1:23", "435.8:11"])
     ap.add_argument("--ref-wl", type=int, default=3)
