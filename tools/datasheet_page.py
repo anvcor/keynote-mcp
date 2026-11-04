@@ -119,7 +119,7 @@ def build(a):
         t.Rows.Add()
     while t.Rows.Count > need:
         t.Rows(t.Rows.Count).Delete()
-    avail = 990.0 - 30.0
+    avail = 1060.0 - 30.0          # bottom margin = top margin (10): the 1000 subtitle line is not used on this page
     rh = avail / len(rows)
     size = 24 if rh >= 33 else (22 if rh >= 30 else 20)
     hdr = ["Surface Type", "No.", "Radius", "Thickness", "Material", "Semi-Dia"]
@@ -134,6 +134,9 @@ def build(a):
     for i in range(2, need + 1):
         t.Rows(i).Height = rh
     t1.Top = 10
+    extra = (1060.0 - t1.Height) / len(rows)          # the header row cannot be thinner than its text: give the difference to the body rows
+    for i in range(2, need + 1):
+        t.Rows(i).Height = t.Rows(i).Height + extra
     # ----- aspheric table -----
     t = t2.Table
     need2 = len(asph) + 1
@@ -151,7 +154,8 @@ def build(a):
             c = t.Cell(i, j)
             fill(c, v, nsize if j == 1 else bsize)
             c.Shape.TextFrame.MarginTop = c.Shape.TextFrame.MarginBottom = 1
-    top2, bottom = 700.0, 1000.0
+    bottom = 1070.0
+    top2 = bottom - (56 + 40 * len(asph) if len(asph) > 5 else 56 + 61 * len(asph))
     t.Rows(1).Height = 56
     body = (bottom - top2 - 56) / len(asph)
     for i in range(2, need2 + 1):
@@ -164,9 +168,10 @@ def build(a):
     pic.LockAspectRatio = 0
     pic.Width, pic.Height = pic.Width * k, pic.Height * k
     pic.Left = 1445 - pic.Width / 2
-    pic.Top = 455 - pic.Height / 2
+    pic.Top = (250 + top2 - 20) / 2 - pic.Height / 2      # centred between the titles and the aspheric table
     pic.Name = "!!%s datasheet layout" % a.prefix
     # ----- titles -----
+    pass
     for sh, txt in zip(titles, (a.title, "Surface Datasheet")):
         sh.TextFrame.WordWrap = 0
         sh.TextFrame.TextRange.Text = txt
