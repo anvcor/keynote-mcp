@@ -333,8 +333,8 @@ def _text_outline(text, size=29.0):
     return " ".join(d)
 
 
-def _labels(g, tf, font, outline):
-    """white text rotated -50 deg above each element, bent arrow down to its top edge; heights relaxed so nothing overlaps"""
+def label_positions(g, tf, pad=0.0):
+    """label anchors for every lens element: x (arrow), ytop (arrow tip), extra (lift), name; heights relaxed so nothing overlaps"""
     C, S, FS = math.cos(math.radians(50)), math.sin(math.radians(50)), 29.0
     L = []
     for i, (f, b) in enumerate(g["elems"]):
@@ -363,12 +363,19 @@ def _labels(g, tf, font, outline):
         moved = False
         for i in range(len(L)):
             for j in range(len(L)):
-                if i != j and (hit(G[i][1], G[j][0], 20) or (i < j and hit(G[i][1], G[j][1], 26))):
+                if i != j and (hit(G[i][1], G[j][0], 20 + pad) or (i < j and hit(G[i][1], G[j][1], 26 + pad))):
                     L[i]["extra"] += 34
                     G[i] = geom(L[i])
                     moved = True
         if not moved:
             break
+    return L
+
+
+def _labels(g, tf, font, outline):
+    """white text rotated -50 deg above each element, bent arrow down to its top edge"""
+    S = math.sin(math.radians(50))
+    L = label_positions(g, tf)
     o = ['<g id="glass_labels" font-family="%s" font-size="29" fill="#FFFFFF">' % font]
     for l in L:
         x, ya = l["x"], l["ytop"]
