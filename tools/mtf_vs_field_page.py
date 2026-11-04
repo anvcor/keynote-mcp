@@ -77,7 +77,7 @@ def add_page(deck, after, png, brand=None, model=None):
     # line pitch as the legend (27 pt, 40 px). Boxes are middle-anchored, so the line centre is top + height / 2.
     for text, centre in ((brand, 324.5), (model, 364.5)):
         if text:
-            tb = s.Shapes.AddTextbox(1, 1553, centre - 62, 262, 83)      # measured: the glyph centre lands 20.5 px below the box middle
+            tb = s.Shapes.AddTextbox(1, 1553, centre - 62, 340, 83)      # measured: the glyph centre lands 20.5 px below the box middle
             tb.Name = text
             f = tb.TextFrame
             f.WordWrap = -1
