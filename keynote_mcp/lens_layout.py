@@ -333,7 +333,7 @@ def _text_outline(text, size=29.0):
     return " ".join(d)
 
 
-def label_positions(g, tf, pad=0.0, align=False):
+def label_positions(g, tf, pad=0.0, align=False, lead=42.0):
     """label anchors for every lens element: x (arrow), ytop (arrow tip), extra (lift), name; heights relaxed so nothing overlaps"""
     C, S, FS = math.cos(math.radians(50)), math.sin(math.radians(50)), 29.0
     L = []
@@ -341,10 +341,10 @@ def label_positions(g, tf, pad=0.0, align=False):
         if g["plate"][i]:
             continue
         pf, pb = tf(*f[-1]), tf(*b[-1])          # the two ends of the element's top edge (profiles run bottom -> top)
-        L.append(dict(i=i, x=(pf[0] + pb[0]) / 2, ytop=min(pf[1], pb[1]), extra=0.0, name=g["glass"][i], n=len(g["glass"][i]) * FS * 0.62))
+        L.append(dict(i=i, x=(pf[0] + pb[0]) / 2, ytop=min(pf[1], pb[1]), lead=lead, extra=0.0, name=g["glass"][i], n=len(g["glass"][i]) * FS * 0.62))
 
     def geom(l):
-        yb = l["ytop"] - 42 - l["extra"]
+        yb = l["ytop"] - lead - l["extra"]
         x = l["x"]
         lead = [(x, l["ytop"] - 14), (x, yb), (x + 16, yb - 16)]
         sx, sy = x + 22 - 7.7, yb - 12 - 6.4
@@ -357,9 +357,9 @@ def label_positions(g, tf, pad=0.0, align=False):
         return any((p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2 < r2 for p in a for q in b)
 
     if align:      # every elbow on one row: the arrows get as long as needed, the texts form clean parallel stripes
-        row = min(l['ytop'] for l in L) - 42
+        row = min(l['ytop'] for l in L) - lead
         for l in L:
-            l['extra'] = l['ytop'] - 42 - row
+            l['extra'] = l['ytop'] - lead - row
         return L
     G = [geom(l) for l in L]
     for _ in range(80):
