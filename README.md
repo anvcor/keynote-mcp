@@ -312,7 +312,7 @@ lens-video-script 里每段前的 `[图N：…]`，可以直接作为页的备�
 
 ### 镜头结构图：CODE V → 矢量图 / DXF（Windows）
 
-`export_lens_layout` 把 CODE V 的 `.len` 直接做成视频里那种结构图（照 85MIX2 第 20–23 页的样式：深灰底 #2C2C2C、白 30% 半透明镜片、浅灰细光线、胶合面细线、光阑短线、右边盖玻璃 + 像面线）。
+`export_lens_layout` 把 CODE V 的 `.len` 直接做成视频里那种结构图（照 85MIX2 第 20–23 页的样式（页面做法、尺寸、颜色等规范见 [结构图规范.md](结构图规范.md)）：深灰底 #2C2C2C、白 30% 半透明镜片、浅灰细光线、胶合面细线、光阑短线、右边盖玻璃 + 像面线）。
 
 - **需要**：Windows、装了 CODE V（COM 对象 `CodeV.Command`）、`pip install pywin32`。SVG 和 DXF 只用标准库；要 PNG / PDF 再装 `pymupdf`，标注文字要变成轮廓还要 `matplotlib`（用 Arial）。装了 `psutil` 时，调用结束会顺手结束这次启动的 CODE V 引擎（`StopCodeV()` 常常关不掉 `codevm.exe`）。
 - **画什么**：无穷远位（`zoom=1`），3 个视场各画上 / 主 / 下 3 条真实光线（VIE 的参考光线，含文件里写的渐晕）。默认视场 = 轴上、最接近最大像高 55% 的那个、最大视场，可用 `fields` 指定。`ERI -12` 让入射光线从镜头前面 12 mm 画起。
