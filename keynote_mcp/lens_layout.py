@@ -340,10 +340,8 @@ def label_positions(g, tf, pad=0.0, align=False):
     for i, (f, b) in enumerate(g["elems"]):
         if g["plate"][i]:
             continue
-        poly = [tf(*p) for p in elem_poly(f, b)]
-        top = min(poly, key=lambda q: q[1])
-        near = [q[0] for q in poly if q[1] < top[1] + 3]
-        L.append(dict(i=i, x=sum(near) / len(near), ytop=top[1], extra=0.0, name=g["glass"][i], n=len(g["glass"][i]) * FS * 0.62))
+        pf, pb = tf(*f[-1]), tf(*b[-1])          # the two ends of the element's top edge (profiles run bottom -> top)
+        L.append(dict(i=i, x=(pf[0] + pb[0]) / 2, ytop=min(pf[1], pb[1]), extra=0.0, name=g["glass"][i], n=len(g["glass"][i]) * FS * 0.62))
 
     def geom(l):
         yb = l["ytop"] - 42 - l["extra"]
