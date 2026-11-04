@@ -374,20 +374,20 @@ def label_positions(g, tf, pad=0.0):
 
 def _labels(g, tf, font, outline):
     """white text rotated -50 deg above each element, bent arrow down to its top edge"""
-    S = math.sin(math.radians(50))
-    L = label_positions(g, tf)
+    C, S = math.cos(math.radians(50)), math.sin(math.radians(50))
+    L = label_positions(g, tf, pad=12)
     o = ['<g id="glass_labels" font-family="%s" font-size="29" fill="#FFFFFF">' % font]
     for l in L:
         x, ya = l["x"], l["ytop"]
         yb = ya - 34 - l["extra"]
         o.append('<g id="label_E%02d">' % (l["i"] + 1))
-        o.append('<path d="M %.1f %.1f L %.1f %.1f L %.1f %.1f" fill="none" stroke="#FFFFFF" stroke-width="3"/>' % (x, ya - 14, x, yb, x + 16, yb - 16))
+        o.append('<path d="M %.1f %.1f L %.1f %.1f L %.1f %.1f" fill="none" stroke="#FFFFFF" stroke-width="3"/>' % (x, ya - 14, x, yb, x + 22 * C, yb - 22 * S))
         o.append('<path d="M %.1f %.1f L %.1f %.1f L %.1f %.1f Z" fill="#FFFFFF"/>' % (x - 8, ya - 14, x + 8, ya - 14, x, ya))
         d = _text_outline(l["name"]) if outline else None
         if d:
-            o.append('<path transform="translate(%.1f %.1f) rotate(-50) scale(1 -1)" d="%s"/>' % (x + 22, yb - 12, d))
+            o.append('<path transform="translate(%.1f %.1f) rotate(-50) scale(1 -1)" d="%s"/>' % (x + 27 * C + 7.7, yb - 27 * S + 6.4, d))
         else:
-            o.append('<text transform="translate(%.1f %.1f) rotate(-50)">%s</text>' % (x + 22, yb - 12, l["name"]))
+            o.append('<text transform="translate(%.1f %.1f) rotate(-50)">%s</text>' % (x + 27 * C + 7.7, yb - 27 * S + 6.4, l["name"]))
         o.append("</g>")
     o.append("</g>")
     return "\n".join(o)
