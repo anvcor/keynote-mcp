@@ -5,7 +5,12 @@ import traceback
 
 from . import __version__
 from .config import Config
-from .tools import Context, call, tool_list
+
+WINDOWS = sys.platform == "win32"
+if WINDOWS:  # no Keynote on Windows: drive PowerPoint instead, same tool names
+    from .ppt_tools import Context, call, tool_list, INSTRUCTIONS as PPT_INSTRUCTIONS
+else:
+    from .tools import Context, call, tool_list
 
 SUPPORTED_VERSIONS = ["2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05"]
 
@@ -45,6 +50,8 @@ INSTRUCTIONS = """\
   要细看就 open_presentation 打开（会自动复制，不改参考文稿）。
 - 视频由他审核后手动导出：3840x2160、60fps、HEVC 或 H.264，文件名「<课题>动画1-<页数>.mov」。
 """
+if WINDOWS:
+    INSTRUCTIONS = PPT_INSTRUCTIONS
 
 
 class Server:
@@ -88,7 +95,8 @@ class Server:
                 result = {
                     "protocolVersion": ver,
                     "capabilities": {"tools": {"listChanged": False}},
-                    "serverInfo": {"name": "keynote", "title": "Keynote", "version": __version__},
+                    "serverInfo": {"name": "keynote", "title": "Keynote (PowerPoint on Windows)" if WINDOWS else "Keynote",
+                                   "version": __version__},
                     "instructions": INSTRUCTIONS,
                 }
             elif method == "ping":
@@ -122,7 +130,7 @@ class Server:
             r = call(self.ctx, name, args)
         except Exception as e:
             self.log("tool %s failed: %s" % (name, e))
-            if not isinstance(e, (ValueError, PermissionError, RuntimeError)) and e.__class__.__name__ != "KeynoteError":
+            if not isinstance(e, (ValueError, PermissionError, RuntimeError)) and e.__class__.__name__ not in ("KeynoteError", "PptError"):
                 self.log(traceback.format_exc())
             return {"content": [{"type": "text", "text": "错误：%s" % e}], "isError": True}
         content = []

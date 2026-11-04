@@ -1,0 +1,57 @@
+{
+ "file": "KEYNOTE动画模板-PPT.pptx",
+ "source": "KEYNOTE动画模板.key 的 PowerPoint 版：由 keynote_mcp/ppt_template.py 从 85MIX2 的 Keynote 导出 pptx 生成（第 97–103 页就是模板样例页，第 8 页是两款产品介绍页）。样例图片压缩过（长边 2560）。",
+ "how_to_use": "新文稿是这份模板的副本。第 1–11 页是深灰空白页，按顺序直接用作内容页或页间空白页（不够就 add_slide）。第 12–18 页是样例页（get_deck 里有 sample 标记）：需要同类图时用 duplicate_slide 复制样例页，再 move_slide 移到要用的位置，用 update_item 改文字（F 值数字用 highlight 标红），换底图用 update_item 的 image。曲线形状脚本改不了，由作者自己描（或到 Mac 上用 trace_mtf）。产品介绍页用 product_card。做完后删掉没用到的样例页和多余空白页。所有内容的底边不要低于 y=1000（字幕参考线）。PowerPoint 的转场记在切入的那一页上。",
+ "red": "#FC4B3E",
+ "slides": {
+  "1-11": "空白页（深灰 #2C2C2C 底，0.5 秒神奇移动）",
+  "12": "纵向像差图 Longitudinal Aberration：5 条波长曲线（435.8/486.1/546.1/587.6/656.3nm）带线条描绘动画；左上大字 F 值（数字红色），标题后的 β=… 是公式图片；右上角品牌（SONY）和型号（FE 50mm F1.4 GM）。坐标：横轴 Millimeters −0.20…0.20，纵轴 归一化光瞳坐标 0…1",
+  "13": "同一张纵向像差图的下一步：标题缩短，加色焦移宽度标注（如 67μm，虚线 + 双箭头）；和第 12 页之间用神奇移动",
+  "14": "FFT MTF vs Field：@INF F 值；10/20/40/80lp/mm 四组曲线（实线子午、虚线弧矢）、MTF 50% 橙线；横轴 Y Field in mm 0…21.6，纵轴 Modulus of OTF；曲线线条描绘、图例逐字淡入移动；右上角品牌和型号",
+  "15": "开场封面：品牌标志（ZEISS）+「Or」+ 品牌标志（G）+ 大字型号（FE 50mm F1.4，F 值数字红色）+ 底部镜头大图",
+  "16": "光学结构图：标题（SONY FE 50mm F1.4 GM）+ 灰色镜片形状 + 光轴虚线 + 蓝色光线（光线带线条描绘）",
+  "17": "镜片形状素材（灰色矩形和圆，用于拼结构图或做神奇移动过渡）",
+  "18": "产品介绍页（来自松若85 第 4 页）：左右两张产品图（作者用 Photoshop 抠好的透明 PNG） + 箭头线 + 产品名（38 号）+ 灰色圆角标签（#5E5E5E，圆角 15，文字 26 号：Since 日期或价格）；全部在 y=1000 字幕参考线以上。用 product_card 生成，不要手改这一页"
+ },
+ "editable_text_items": {
+  "12": {
+   "41": "标题 Longitudinal Aberration",
+   "57": "标题里的 F 值",
+   "59": "左上大字 F 值",
+   "60": "型号",
+   "61": "品牌",
+   "42-55": "波长图例",
+   "38": "横轴单位",
+   "39": "纵轴名称"
+  },
+  "14": {
+   "47": "标题 FFT MTF vs Field",
+   "48": "@INF F 值",
+   "65": "型号",
+   "66": "品牌",
+   "49-63": "线对图例",
+   "38": "横轴名称",
+   "39": "纵轴名称"
+  },
+  "15": {
+   "1": "大字型号",
+   "5": "Or"
+  },
+  "16": {
+   "6": "标题（品牌 + 型号）"
+  },
+  "18": {
+   "note": "用 product_card 生成，不要手改；对象按 KMCP_ROLE 标签认（arrow、badgeL、badgeL_text、badgeR、badgeR_text、imgL、imgR、nameL、nameR）"
+  }
+ },
+ "subtitle_guide_y": 1000,
+ "sample_tags": {
+  "12": "longitudinal",
+  "13": "longitudinal_annotated",
+  "14": "mtf_field",
+  "15": "cover",
+  "16": "structure",
+  "17": "shapes",
+  "18": "product_card"
+ }
+}

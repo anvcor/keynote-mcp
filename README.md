@@ -4,7 +4,8 @@
 
 让 Claude（或其它支持 MCP 的 LLM）直接在这台 Mac 上的 Keynote 里新建、编辑文稿：加页、写字、放图、做神奇移动动画、做章节卡、写演讲者备注、导出 PDF / 逐页图片 / PPTX。
 
-- 只支持 macOS + Keynote（App Store 版，已在 macOS 26.3.1 / Keynote 14.4 上实测）。
+- macOS + Keynote（App Store 版，已在 macOS 26.3.1 / Keynote 14.4 上实测）。
+- **Windows 上改为控制 PowerPoint**：同一个 `server.py`，工具名和参数基本一样，做出 .pptx，再到 Mac 上用 `import_pptx` 转成 .key（见「Windows」一节）。
 - 基本功能零依赖：只用系统自带的 `/usr/bin/python3`（3.9 即可）。加构件动画另外需要 keynote-parser，装在本文件夹的 `.venv` 里（见安装第 3 步）。
 - **视频不由工具导出**：做完后由你在 Keynote 里审核效果，再手动导出（见「视频导出」一节）。
 
@@ -256,12 +257,60 @@ lens-video-script 里每段前的 `[图N：…]`，可以直接作为页的备�
 
 **路线一：Windows 上用 PowerPoint 创作，Mac 上重制 .key**（推荐，不需要 SSH，详见 [方案.md 第 4.1 节](方案.md)）
 
-1. 在 Windows 上用 PowerPoint 做主体内容，Claude 可以用 pptx skill 帮忙。每页备注写 `[图N：…]` 和文稿段落；动画用「平滑」转场表示，或者在备注里写一行 `[动画] …`。
+1. 在 Windows 上运行同一个 `server.py`：它检测到 Windows，就改用 PowerPoint 后端（`keynote_mcp/ppt_tools.py`，通过 COM 控制本机的 PowerPoint）。Claude 照常调用 `create_presentation`、`add_slide`、`magic_move_step`、`chapter_card`、`set_notes` 这些工具，做出 .pptx。
 2. 把 .pptx 放进 Mac 的 `~/KeynoteMCP/`。
-3. 对 Claude 说「用 import_pptx 导入 xxx.pptx」。工具会转成 .key，平滑自动变成神奇移动，再按 `[动画]` 说明逐页重做、同步备注。
+3. 对 Claude 说「用 import_pptx 导入 xxx.pptx」。工具会转成 .key，平滑自动变成神奇移动，再按 `[动画]` 说明和 PPT 里记下的进入动画逐页重做、同步备注。
 4. 人工精修后手动导出视频。
 
-在这台 Mac 上实测过（测试文件由 `test/make_test_pptx.py` 用 python-pptx 生成，模拟 Windows 上 Claude 的做法）：
+### Windows 上的 PowerPoint 后端
+
+2026-11-03 在 Windows 11 + Microsoft 365 PowerPoint（16.0）+ Python 3.11 上实测，`test/e2e_test_win.py` 全部通过。
+
+**安装**
+
+1. 装 Microsoft PowerPoint，以及 Python 3.9 以上版本。
+2. 安装依赖：`python -m pip install pywin32 pillow`。pywin32 用来调 COM，Pillow 用来缩放页面图片和识别 Zemax 图。
+3. 自检：`python E:\Download\keynote-mcp\server.py --version`，输出 `0.1.0` 就说明能跑。
+4. 接到 Claude Code，在终端运行（`KEYNOTE_MCP_ROOTS` 用分号分隔，第一个是工作目录）：
+
+   ```bash
+   claude mcp add keynote --scope user -e "KEYNOTE_MCP_ROOTS=E:\KeynoteMCP;E:\Download" -- E:\Python\python.exe E:\Download\keynote-mcp\server.py
+   ```
+
+   没有 `claude` 命令行（只用桌面版）时，在 `%USERPROFILE%\.claude.json` 的 `mcpServers` 里加同样的内容：
+
+   ```json
+   "keynote": {
+     "type": "stdio",
+     "command": "E:\\Python\\python.exe",
+     "args": ["E:\\Download\\keynote-mcp\\server.py"],
+     "env": { "KEYNOTE_MCP_ROOTS": "E:\\KeynoteMCP;E:\\Download" }
+   }
+   ```
+
+   重开会话后，能看到 `keynote_status` 这些工具就说明接上了。允许目录里加上 `E:\Download`，课题文件夹里的 .pptx 就能直接改；其它位置的文稿会先复制一份再打开。
+
+**和 Mac 版一样的地方**
+
+- 页面 1920×1080 点（26.667×15 英寸），坐标数字和 Keynote 文稿一致。导入 Keynote 后就是 1920×1080，不会变成 960×540。
+- 默认从 `templates/KEYNOTE动画模板-PPT.pptx` 新建。这份模板由 `python -m keynote_mcp.ppt_template` 从 85MIX2 的导出 pptx 生成：85MIX2 的第 97–103 页就是 Keynote 模板的样例页，第 8 页是两款产品介绍页。页序、样例页内容和对象编号都和 `KEYNOTE动画模板.key` 一致：1–11 页空白，12 纵向像差，13 色焦移标注，14 FFT MTF vs Field，15 封面，16 结构图，17 镜片形状，18 产品介绍页。
+- 加页默认深灰 #2C2C2C 空白页，切入 0.5 秒平滑；章节卡、产品介绍页、字幕线警告、`[图N]` 备注同步、参考素材（自动从 `materials/pptx` 解压到 `references/_pptx/`）的做法都相同。
+
+**和 Mac 版不一样的地方**
+
+| 项目 | Windows / PowerPoint |
+|---|---|
+| 转场记在哪一页 | PowerPoint 记在**切入**的那一页（第 N 页上的平滑 = 第 N-1 页切到第 N 页）。`magic_move_step`、`add_slide`、`chapter_card` 已经按这个处理，`get_deck` 里写作 `transition_in`；`import_pptx` 会自动换算 |
+| 神奇移动 | 写成平滑（`p159:morph byObject`）。工具新建的对象名字以 `!!` 开头，复制出来的页上同名，平滑一定能配对 |
+| 字体 | 新文字照旧写 Helvetica Neue（中文 PingFang SC）。Windows 没有这两个字体，会显示替代字体，宽度略有出入；回到 Mac 上会还原。不要改成微软雅黑 |
+| 构件动画 | PowerPoint 没有线条描绘和逐字淡入移动。`add_builds` 把 line_draw 写成「擦除（自左）」，fade_move 写成「飞入（自左、按字）」，只作预览，到 Mac 上用 `add_builds` 重做。Keynote 导出 pptx 时线条描绘会变成「溶解」、逐字淡入移动变成「飞入」，`list_builds` 两种都按原意显示 |
+| 图片透明度 | 脚本接口设不了。要淡出就在下一页删掉图片（平滑会淡出）。`update_item` 换图时会用格式刷把原图的透明度带过去，所以图表页那张看不见的 Zemax 底图换完还是看不见 |
+| 自动保存 | 每次修改后自动保存（PowerPoint 本地文件没有自动保存） |
+| 没有的工具 | `trace_mtf`（曲线到 Mac 上描）、`import_pptx`、`list_themes`、视频导出、带备注的 PDF |
+
+**顺带修了 Mac 端的一个问题**：PowerPoint 保存的平滑如果是 0.5 秒，文件里不写时长（1 秒只写 `spd="slow"`）。`pptx_info.py` 原来把这种平滑一律当成 2 秒，`import_pptx` 会把 0.5 秒的平滑转成 2 秒的神奇移动。现在按 `spd` 读：不写为 0.5 秒，med 为 0.75 秒，slow 为 1 秒。
+
+以下是之前在 Mac 上用 python-pptx 生成的测试文件验证过的结论（测试文件由 `test/make_test_pptx.py` 生成）：
 
 - **PowerPoint 的平滑导入后直接变成神奇移动**，对象真的会动（从测试视频里截取转场中间一帧确认过）。平滑的对象请在前后两页用同一个名字，名字以 `!!` 开头时强制匹配。
 - 淡出变成溶解；进入动画变成 Keynote 的构件动画，导出视频时每个构件大约多 2.5 秒。
@@ -342,6 +391,14 @@ python3 /Users/anvcor/Downloads/keynote-mcp/test/e2e_test.py
 
 加上 `--movie` 参数会额外测试默认关闭的视频导出。
 
+Windows 上：
+
+```bash
+python E:\Download\keynote-mcp\test\e2e_test_win.py
+```
+
+这个测试通过 MCP 协议驱动真实的 PowerPoint，一共 50 多步：从模板新建 `test/测试文稿.pptx`，做标题页（F 值标红）、放图、神奇移动、章节卡；复制 MTF 样例页、改文字、换 Zemax 底图（检查底图仍然透明、动画还在）；加构件动画、产品介绍页（不透明图会给出提醒）、线条、形状、表格；检查字幕线警告；同步 `文稿.md` 备注（保留 `[动画]` 行）；渲染页面，导出 PNG、PDF、部分页的 PPTX；检查拒绝写到允许目录之外，打开参考成品时会先复制。最后用 `pptx_info`（Mac 上 `import_pptx` 用的解析器）读一遍结果，确认平滑 0.5 秒、`[图N]`、`[动画]` 都能读到。输出在 `test/out_win/`。
+
 ## 文件结构
 
 ```
@@ -349,7 +406,9 @@ keynote-mcp/
   server.py              入口
   keynote_mcp/
     server.py            MCP 协议（stdio、JSON-RPC）
-    tools.py             各个工具的实现
+    tools.py             各个工具的实现（Mac / Keynote）
+    ppt_tools.py         Windows 上的同名工具（PowerPoint COM，需要 pywin32）
+    ppt_template.py      生成 PowerPoint 版初始模板
     osa.py               调用 osascript；用户文字只通过参数传入，不拼进脚本
     config.py            允许目录、Windows 路径映射
     script_md.py         解析 文稿.md 里的 [图N]
@@ -361,7 +420,7 @@ keynote-mcp/
     pack_materials.py    把成品文稿压缩图片、打包、分卷，放进 materials/
     mp4info.py           读视频时长、帧率（只在开启视频导出时用到）
   .venv/                 keynote-parser 和 Pillow（给 add_builds / list_builds / trace_mtf 用，不进仓库）
-  templates/             你的初始模板 KEYNOTE动画模板.key 和每页说明 .json
+  templates/             你的初始模板 KEYNOTE动画模板.key、它的 PowerPoint 版 KEYNOTE动画模板-PPT.pptx，各自的每页说明 .json
   references/            近期成品文稿（.key 只在本机）、catalog.json、各课题 目录图.jpg
   materials/             成品文稿的 .key 和 .pptx 分卷压缩包（给 Windows 用）
   test/                  真机测试脚本、测试素材和输出

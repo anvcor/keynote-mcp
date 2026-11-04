@@ -67,9 +67,9 @@ def _transition(sld):
     option = kids[0].get("option") if kids else None
     if tr.get(P14 + "dur"):
         dur = int(tr.get(P14 + "dur")) / 1000.0
-    elif effect == "morph":
-        dur = 2.0  # PowerPoint's default morph duration
     else:
+        # PowerPoint writes no p14:dur for the standard speeds, also for Morph:
+        # 0.5 s -> no attributes (spd defaults to fast), 0.75 s -> spd="med", 1 s -> spd="slow".
         dur = SPEED.get(tr.get("spd", "fast"), 0.5)
     t = {"effect": effect, "duration": dur}
     if option:

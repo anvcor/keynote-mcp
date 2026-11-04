@@ -8,7 +8,7 @@ DEFAULT_WORKSPACE = os.path.expanduser("~/KeynoteMCP")
 
 def _norm_dir(p):
     p = os.path.abspath(os.path.expanduser(p))
-    return p.rstrip("/") + "/"
+    return p.rstrip("/\\") + os.sep  # "/" on the Mac, "\\" on Windows
 
 
 class Config:
@@ -104,10 +104,12 @@ class Config:
         return path
 
     def in_roots(self, path):
-        p = os.path.abspath(path)
-        rp = os.path.realpath(p)
+        # normcase: Windows paths are case-insensitive (no-op on the Mac)
+        p = os.path.normcase(os.path.abspath(path))
+        rp = os.path.normcase(os.path.realpath(p))
         for r in self.roots:
-            if (p + "/").startswith(r) or (rp + "/").startswith(r):
+            r = os.path.normcase(r)
+            if (p + os.sep).startswith(r) or (rp + os.sep).startswith(r):
                 return True
         return False
 
@@ -115,7 +117,7 @@ class Config:
         if not self.in_roots(path):
             raise PermissionError(
                 "不允许写到这个位置：%s。允许的目录：%s。需要的话在配置里用 KEYNOTE_MCP_ROOTS 添加目录。"
-                % (path, ", ".join(sorted(set(r.rstrip('/') for r in self.roots))))
+                % (path, ", ".join(sorted(set(r.rstrip('/\\') for r in self.roots))))
             )
         return path
 

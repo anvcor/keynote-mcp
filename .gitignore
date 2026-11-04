@@ -13,3 +13,11 @@ test/测试文稿.key
 # reference decks: the raw .key/.pptx stay local, compressed split archives live in materials/
 references/**/*.key
 references/_pptx/
+materials/**/*.key
+materials/**/*.pptx
+
+# Windows backend test output
+test/测试文稿.pptx
+test/out_win/
+test/副本/
+~$*.pptx
