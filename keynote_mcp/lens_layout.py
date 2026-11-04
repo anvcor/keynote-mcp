@@ -246,14 +246,37 @@ def parse_layout(dxf_text):
     def H(p):
         return len(p) == 2 and abs(p[-1][1] - p[0][1]) < 1e-6
 
+    def E(p):                  # rim edge: a straight 2-point line, horizontal or slanted (surfaces of one element with different CIR)
+        return len(p) == 2 and not V(p)
+
     def up(p):
         return p[::-1] if p[0][1] > p[-1][1] else p
 
     elems, ticks, rest, k = [], [], [], 0
     while k < len(P):
-        if k + 3 < len(P) and V(P[k]) and V(P[k + 1]) and H(P[k + 2]) and H(P[k + 3]):
-            elems.append((up(P[k]), up(P[k + 1])))     # front, back (edges are implied by the closed outline)
-            k += 4
+        j = k + 2
+        extra = []
+        while j < len(P) and len(P[j]) == 2 and V(P[j]) and len(extra) < 2:     # a surface clipped by a small CIR: CODE V adds a short straight rim piece
+            extra.append(P[j])
+            j += 1
+        if k + 1 < len(P) and j + 1 < len(P) and V(P[k]) and V(P[k + 1]) and E(P[j]) and E(P[j + 1]):
+            f, b = up(P[k]), up(P[k + 1])
+            for ex in extra:
+                ex = up(ex)
+                best = None
+                for name, prof in (("f", f), ("b", b)):
+                    for end in (0, -1):
+                        for exend in (0, -1):
+                            dd = abs(prof[end][0] - ex[exend][0]) + abs(prof[end][1] - ex[exend][1])
+                            if best is None or dd < best[0]:
+                                best = (dd, name, end, exend)
+                _, name, end, exend = best
+                if name == "f":
+                    f = (ex + f) if end == 0 else (f + ex)
+                else:
+                    b = (ex + b) if end == 0 else (b + ex)
+            elems.append((up(f), up(b)))               # front, back (edges are implied by the closed outline)
+            k = j + 2
         elif V(P[k]):
             ticks.append(P[k])
             k += 1
