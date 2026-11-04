@@ -423,6 +423,24 @@ def make_svg(g, tf, labels=False, title="", outline=False):
     return "\n".join(o)
 
 
+def make_svg_ppt(g, tf, title=""):
+    """SVG made for copy-paste into PowerPoint: cropped to the drawing, units in pt (1 unit = 1 slide point at 1920x1080, so it lands
+    at true size, 14.3 pt/mm), right edge = image plane, vertical centre = optical axis. Returns (svg, info) with the position
+    that puts it where the full-page SVG would be: Left = left, Top = top (both in pt)."""
+    pts = [tf(*q) for f, b in g["elems"] for q in elem_poly(f, b)]
+    pts += [tf(*q) for lay in g["rays"].values() for r in lay for q in r]
+    pts += [tf(*q) for t in g["stop"] for q in t] + [tf(*q) for q in g["img"]]
+    x0 = min(p[0] for p in pts) - 2.0
+    x1 = tf.x_img + 1.2
+    x0 = max(x0, x1 - 1900.0)             # PowerPoint shrinks anything wider than the slide on insert: the far ends of the incoming rays are cut instead
+    half = max(abs(p[1] - tf.y0) for p in pts) + 2.0
+    w, h = x1 - x0, 2 * half
+    svg = make_svg(g, tf, False, title)
+    head = '<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">'
+    new = '<svg xmlns="http://www.w3.org/2000/svg" width="%.1fpt" height="%.1fpt" viewBox="%.1f %.1f %.1f %.1f">' % (w, h, x0, tf.y0 - half, w, h)
+    return svg.replace(head, new, 1), dict(width_pt=round(w, 1), height_pt=round(h, 1), left_pt=round(x0, 1), top_pt=round(tf.y0 - half, 1))
+
+
 # --------------------------------------------------------------------- DXF out ---
 
 def make_dxf_mm(g):
@@ -532,6 +550,10 @@ def export_layouts(lens_files, out_dir, fields=None, zoom=1, px_per_mm=14.3, lab
             svg = make_svg(g, tf, lab, stem + suf)
             if "svg" in formats:
                 put("%s_layout%s.svg" % (stem, suf), svg)
+                if not lab:
+                    ps, pinfo = make_svg_ppt(g, tf, stem)
+                    put("%s_layout_ppt.svg" % stem, ps)
+                    info["ppt_svg"] = pinfo
             if want_raster:
                 rs = make_svg(g, tf, lab, stem + suf, outline=True)
                 png = os.path.join(out_dir, "%s_layout%s.png" % (stem, suf)) if "png" in want_raster else None
