@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from keynote_mcp import lens_layout as LL  # noqa: E402
 
 WHITE = 0xFFFFFF
-ROW_Y = 877.0          # bracket row (axis on y=540)
+ROW_Y = 877.0          # bracket row (axis on y=540); --row-y lowers it when a lens element reaches below (Sigma 35 DG II: 925)
 
 
 def aspheric_elements(lis, g):
@@ -88,6 +88,9 @@ def line(slide, x1, y1, x2, y2, name):
 
 
 def build(a):
+    global ROW_Y
+    ROW_Y = a.row_y
+    arrow_v = min(75.0, 998.0 - ROW_Y)
     import win32com.client as w
     lens = os.path.abspath(a.lens)
     run = LL.run_codev([lens])[0]
@@ -106,7 +109,8 @@ def build(a):
     pic = A.Shapes.AddPicture(os.path.abspath(a.svg), False, True, 0, 0, 1920, 1080)
     pic.Name = "!!%s layout" % a.prefix
     pic.ZOrder(1)
-    clone_text(A, title_t, a.name, "!!%s title" % a.prefix)
+    t = clone_text(A, title_t, a.name, "!!%s title" % a.prefix)
+    t.Top = t.Top - 25                  # glyph middle (cap height) at y=126: halfway between page top and the Sony lens top (252)
     ranges = [tuple(int(x) for x in s.split("-")) for s in a.groups]
     gl = {}
     for k, (ea, eb) in enumerate(ranges, 1):
@@ -128,8 +132,8 @@ def build(a):
         cx = (left + right) / 2
         sgn = -1 if d == "left" else 1
         fb = B.Shapes.BuildFreeform(0, cx, ROW_Y)
-        fb.AddNodes(0, 0, cx, ROW_Y + 75)
-        fb.AddNodes(0, 0, cx + sgn * 120, ROW_Y + 75)
+        fb.AddNodes(0, 0, cx, ROW_Y + arrow_v)
+        fb.AddNodes(0, 0, cx + sgn * 120, ROW_Y + arrow_v)
         ar = fb.ConvertToShape()
         ar.Name = "!!%s G%d focus arrow" % (a.prefix, k)
         ar.Fill.Visible = 0
@@ -140,7 +144,7 @@ def build(a):
         ar.Line.EndArrowheadWidth = 3
         lab = B.Shapes("!!%s G%d" % (a.prefix, k))
         lab.Left = cx + sgn * 60 - lab.Width / 2            # centred on the arrow's horizontal part
-        lab.Top = lab.Top - 18.5                         # Sony: 890 -> 871.5 (middle of bracket row and arrow row)
+        lab.Top = lab.Top - arrow_v / 75.0 * 18.5                         # Sony: 890 -> 871.5 (middle of bracket row and arrow row)
     # ---------- page C ----------
     C = B.Duplicate()(1)
     C.Shapes("!!%s title" % a.prefix).Delete()
@@ -215,6 +219,7 @@ def main():
     ap.add_argument("--groups", nargs="+", required=True, help="element ranges per group, e.g. 1-7 8-13 14-14")
     ap.add_argument("--focus", nargs="+", required=True, help="group:direction, e.g. 2:left")
     ap.add_argument("--prefix", default="lens")
+    ap.add_argument("--row-y", type=float, default=877.0)
     a = ap.parse_args()
     print("pages:", build(a))
 
