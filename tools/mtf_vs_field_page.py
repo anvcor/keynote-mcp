@@ -73,9 +73,9 @@ def add_page(deck, after, png, brand=None, model=None):
     rect.Line.Visible = 0
     pic = s.Shapes.AddPicture(os.path.abspath(png), False, True, 64.5, 0.4, 1811.1, 1079.3)   # same box as 老蛙 page 26
     pic.Name = os.path.basename(png)
-    # lens model: two black lines above the chart legend (block centre y 368), left-aligned with the legend column, same font size and
+    # lens model: two black lines above the chart legend (block centre on the MTF 0.7 grid line, y 344.5), left-aligned with the legend column, same font size and
     # line pitch as the legend (27 pt, 40 px). Boxes are middle-anchored, so the line centre is top + height / 2.
-    for text, centre in ((brand, 348.0), (model, 388.0)):
+    for text, centre in ((brand, 324.5), (model, 364.5)):
         if text:
             tb = s.Shapes.AddTextbox(1, 1553, centre - 62, 262, 83)      # measured: the glyph centre lands 20.5 px below the box middle
             tb.Name = text
