@@ -1538,6 +1538,28 @@ def h_read_zemax_mtf(ctx, a):
                         fields=a.get("fields"), csv_path=csv_path)
 
 
+# ------------------------------------------------------------ lens layout (CODE V) --
+
+def h_export_lens_layout(ctx, a):
+    from . import lens_layout as LL
+    lens = a["lens_files"]
+    if isinstance(lens, str):
+        lens = [lens]
+    lens = [os.path.normpath(ctx.cfg.to_local(p)) for p in lens]
+    out = os.path.normpath(ctx.cfg.to_local(a["out_dir"]))
+    ctx.cfg.check_writable(os.path.join(out, "x"))
+    fmts = tuple(a.get("formats") or ("svg", "dxf"))
+    bad = [f for f in fmts if f not in ("svg", "dxf", "png", "pdf")]
+    if bad:
+        raise ValueError("formats 只能是 svg / dxf / png / pdf：%s" % bad)
+    try:
+        return LL.export_layouts(lens, out, fields=a.get("fields"), zoom=int(a.get("zoom", 1)),
+                                 px_per_mm=num(a.get("px_per_mm", 14.3), "px_per_mm", lo=3, hi=40),
+                                 labeled=bool(a.get("labeled", True)), formats=fmts, names=a.get("names"))
+    except LL.LayoutError as e:
+        raise PptError(str(e))
+
+
 # --------------------------------------------------------------- product card --
 
 def _transparency(path):
@@ -1974,6 +1996,19 @@ TOOLS = [
               "after": {"type": "integer", "minimum": 0, "description": "放在第几页之后，不填 = 末尾"},
               "arrow": {"type": "boolean", "description": "两款之间的箭头，两款时默认 true"}},
              ["products"]), h_product_card),
+    ("export_lens_layout", "用 CODE V 把 .len 镜头文件导出 2D 结构图（无穷远位、3 个视场各上/主/下 3 条光线，含渐晕），"
+                           "照美科 85MIX2 那页的样式重画成矢量图：SVG（每片镜片、每条光线单独 id，Illustrator / Keynote 可直接用）、"
+                           "带玻璃名标注的 SVG、1:1 毫米 DXF（分图层）和 CODE V 原始 DXF；可选 png / pdf。"
+                           "一次可给多只镜头（同一个 CODE V 会话，同一比例、像面对齐，方便对比）。只在 Windows + CODE V 上能用；不改 .len。",
+     _schema({"lens_files": {"type": "array", "items": {"type": "string"}, "minItems": 1, "description": "CODE V .len 文件路径"},
+              "out_dir": {"type": "string", "description": "输出文件夹（需在允许目录内）"},
+              "fields": {"type": "array", "items": {"type": "integer"}, "description": "视场号（最多 3 个）；不填 = 轴上、最接近最大像高 55% 的那个、最大视场"},
+              "zoom": {"type": "integer", "minimum": 1, "description": "对焦 / 变焦位置，默认 1（无穷远）"},
+              "formats": {"type": "array", "items": {"type": "string", "enum": ["svg", "dxf", "png", "pdf"]}, "description": "默认 svg + dxf"},
+              "labeled": {"type": "boolean", "description": "同时出带玻璃名标注的版本，默认 true"},
+              "px_per_mm": {"type": "number", "description": "1920x1080 画布上每毫米多少像素，默认 14.3（长镜头调小）"},
+              "names": {"type": "array", "items": {"type": "string"}, "description": "输出文件名前缀，默认用 .len 文件名"}},
+             ["lens_files", "out_dir"]), h_export_lens_layout),
     ("list_references", "查看作者近期成品文稿（Keynote 导出的 .pptx 版，页号和原稿一致）：每份的页数、各类页面（章节卡、MTF 图、纵向像差图、"
                         "频响图、产品介绍页……）在第几页、每页的主要文字，以及缩略图目录。做新页前可以先找找他以前怎么做的。",
      _schema({"project": {"type": "string", "description": "课题名的一部分，如 85MIX2、松若85；不填则列出全部"},
@@ -1999,7 +2034,7 @@ TOOLS = [
 
 READ_ONLY = {"keynote_status", "get_deck", "get_slide", "view_slide", "read_zemax_mtf", "list_builds", "list_references"}
 # Tools after which the deck is saved automatically (PowerPoint has no autosave for local files).
-NO_AUTOSAVE = READ_ONLY | {"save_presentation", "close_presentation", "create_presentation", "open_presentation", "export"}
+NO_AUTOSAVE = READ_ONLY | {"save_presentation", "close_presentation", "create_presentation", "open_presentation", "export", "export_lens_layout"}
 SUBTITLE_CHECKED = {"add_text", "add_image", "add_shape", "add_line", "add_table", "update_item"}
 HANDLERS = {name: h for name, _d, _s, h in TOOLS}
 
@@ -2081,6 +2116,7 @@ INSTRUCTIONS = """\
   做同类页时 duplicate_slide 复制样例页、move_slide 挪到位置、update_item 改文字（F 值数字用 highlight 标红 #FC4B3E）；
   图表页底图换成新的 Zemax 图用 update_item 的 image（位置、宽度、叠放顺序不变）。曲线形状脚本改不了（Windows 上没有 trace_mtf），由他自己描或到 Mac 上 trace_mtf；
   read_zemax_mtf 可以读出数值写进文稿。做完删掉没用的样例页和多余空白页。
+  结构图（镜片 + 3 个视场的光线）：export_lens_layout 直接从 CODE V 的 .len 导出 SVG / DXF（可一次给多只镜头，同比例）；要放进结构图页就在 formats 里加 png，再用 add_image 放 PNG 版。
 - 95% 的转场是 0.5 秒神奇移动（其次 0.8 秒），全部点按换页。add_slide 和 chapter_card 默认已按此设置。
 - 两页内容之间通常夹一张空白页（视频里表现为淡出再淡入）。
 - 章节卡：空白页 → 编号「一」(76 号) + 标题 (71 号) 两个白色居中文本框 → 空白页，用 chapter_card。

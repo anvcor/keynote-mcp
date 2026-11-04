@@ -310,6 +310,18 @@ lens-video-script 里每段前的 `[图N：…]`，可以直接作为页的备�
 
 **顺带修了 Mac 端的一个问题**：PowerPoint 保存的平滑如果是 0.5 秒，文件里不写时长（1 秒只写 `spd="slow"`）。`pptx_info.py` 原来把这种平滑一律当成 2 秒，`import_pptx` 会把 0.5 秒的平滑转成 2 秒的神奇移动。现在按 `spd` 读：不写为 0.5 秒，med 为 0.75 秒，slow 为 1 秒。
 
+### 镜头结构图：CODE V → 矢量图 / DXF（Windows）
+
+`export_lens_layout` 把 CODE V 的 `.len` 直接做成视频里那种结构图（照 85MIX2 第 20–23 页的样式：深灰底 #2C2C2C、白 30% 半透明镜片、浅灰细光线、胶合面细线、光阑短线、右边盖玻璃 + 像面线）。
+
+- **需要**：Windows、装了 CODE V（COM 对象 `CodeV.Command`）、`pip install pywin32`。SVG 和 DXF 只用标准库；要 PNG / PDF 再装 `pymupdf`，标注文字要变成轮廓还要 `matplotlib`（用 Arial）。装了 `psutil` 时，调用结束会顺手结束这次启动的 CODE V 引擎（`StopCodeV()` 常常关不掉 `codevm.exe`）。
+- **画什么**：无穷远位（`zoom=1`），3 个视场各画上 / 主 / 下 3 条真实光线（VIE 的参考光线，含文件里写的渐晕）。默认视场 = 轴上、最接近最大像高 55% 的那个、最大视场，可用 `fields` 指定。`ERI -12` 让入射光线从镜头前面 12 mm 画起。
+- **输出**（每只镜头）：`<名>_layout.svg`（每片镜片、每条光线单独 id，Illustrator / Keynote 直接用）、`<名>_layout_labeled.svg`（加玻璃名和折线箭头，文字 -50° 自动错开不重叠）、`<名>_layout_mm.dxf`（1:1 毫米、R12 ASCII，图层 LENS / CEMENT / RAYS_F1_ONAXIS / RAYS_F2_MID / RAYS_F3_FULL / STOP / IMAGE_PLANE / AXIS / GLASS_TEXT，原点在第一面顶点）、`<名>_CODEV_z1.dxf`（CODE V 原始导出，单位是绘图英寸，比例写在 `Scale:` 文字里，每只镜头不一样）。
+- **多只镜头一次给**：同一个 CODE V 会话、同一比例（默认 14.3 px/mm）、像面对齐在 x=1832，放在一起能直接比大小。
+- **速度**：CODE V 启动约 10 秒，每只镜头不到 1 秒，两只镜头合计约 13 秒（含 PNG / PDF）。比起每只镜头单独起一次 CODE V、每个对焦位各导一个 DXF，只用一个会话、`ZOO 1` 只画位置 1。
+- **限制**：只支持序列、透射系统（镜片数要和 `LIS` 里的玻璃数对得上）；玻璃名是 CODE V 里的牌号（去掉 `_HOYA` 之类的厂家后缀），不一定是厂家官方写法；非球面标记没画；写出的位置要在允许目录里。
+- 也可以不通过 MCP 直接用：`python -c "from keynote_mcp.lens_layout import export_layouts; export_layouts([r'a.len', r'b.len'], r'out', formats=('svg','dxf','png'))"`。
+
 ### PowerPoint 复制的内容在飞书里粘贴不上
 
 **现象**：在 Windows 的 PowerPoint 里复制一页或几个对象，到浏览器里的飞书按 Ctrl+V，什么都没有贴上。
