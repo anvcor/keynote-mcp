@@ -297,7 +297,7 @@ def elem_poly(front, back):
 class Frame:
     """plot-inch -> canvas px. Same px/mm for every lens, image planes aligned at x_img, axis on row y0."""
 
-    def __init__(self, g, px_per_mm=14.3, x_img=1832.0, y0=575.0):
+    def __init__(self, g, px_per_mm=14.3, x_img=1832.0, y0=540.0):
         self.k = px_per_mm * IN_MM / g["scale"]
         self.ximg, self.ya, self.x_img, self.y0 = g["img"][0][0], g["axis_y"], x_img, y0
 
@@ -531,5 +531,5 @@ def export_layouts(lens_files, out_dir, fields=None, zoom=1, px_per_mm=14.3, lab
         results.append(dict(lens=os.path.basename(path), elements=len(g["elems"]), cemented_after_element=[i + 1 for i, c in enumerate(g["cem"]) if c],
                             fields=r["fields"], field_heights=[r["heights"][k - 1] for k in r["fields"]] if r["heights"] else None,
                             glass=g["glass"], vie_scale=g["scale"], files=files, **info))
-    return dict(lenses=results, out_dir=out_dir, canvas="1920x1080, %.1f px/mm, image plane at x=1832, axis at y=575" % px_per_mm,
+    return dict(lenses=results, out_dir=out_dir, canvas="1920x1080, %.1f px/mm, image plane at x=1832, axis at y=540 (page centre line)" % px_per_mm,
                 seconds=dict(codev=round(t1 - t0, 1), drawing=round(time.time() - t1, 1)))
