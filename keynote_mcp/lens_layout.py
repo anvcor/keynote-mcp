@@ -423,6 +423,56 @@ def make_svg(g, tf, labels=False, title="", outline=False):
     return "\n".join(o)
 
 
+def _seg_dist(p, a, b):
+    ax, ay, bx, by = a[0], a[1], b[0], b[1]
+    dx, dy = bx - ax, by - ay
+    L2 = dx * dx + dy * dy
+    t = 0.0 if L2 == 0 else max(0.0, min(1.0, ((p[0] - ax) * dx + (p[1] - ay) * dy) / L2))
+    return math.hypot(p[0] - (ax + t * dx), p[1] - (ay + t * dy))
+
+
+def surface_footprint(g, prof):
+    """largest |y - axis| (plot inch) at which one of the drawn rays hits the surface profile `prof`"""
+    best = 0.0
+    for lay in g["rays"].values():
+        for r in lay:
+            for q in r:
+                if min(_seg_dist(q, prof[i], prof[i + 1]) for i in range(len(prof) - 1)) < 0.004:
+                    best = max(best, abs(q[1] - g["axis_y"]))
+    return best
+
+
+def limit_semi(g, elem, side, margin_mm=0.0):
+    """cut an element's surface (side 0 = front, 1 = back) to the height of the drawn rays on it (+ margin): the clear aperture a designer
+    would set to the ray footprint. The element outline follows, so neighbouring elements stop touching at their rims."""
+    prof = g["elems"][elem][side]
+    k = g["scale"] / IN_MM                       # plot inch per mm
+    semi = surface_footprint(g, prof) + margin_mm * k
+    ya = g["axis_y"]
+    out = []
+    for i in range(len(prof) - 1):
+        a, b = prof[i], prof[i + 1]
+        for y in (ya - semi, ya + semi):
+            pass
+        da, db = a[1] - ya, b[1] - ya
+        if abs(da) <= semi and not out:
+            out.append(a)
+        elif abs(da) <= semi:
+            out.append(a)
+        if (abs(da) <= semi) != (abs(db) <= semi) or (abs(da) > semi and abs(db) > semi and da * db < 0):
+            for lim in (-semi, semi):
+                if (da - lim) * (db - lim) < 0:
+                    t = (lim - da) / (db - da)
+                    out.append((a[0] + t * (b[0] - a[0]), ya + lim))
+    if abs(prof[-1][1] - ya) <= semi:
+        out.append(prof[-1])
+    out.sort(key=lambda q: q[1])
+    e = list(g["elems"][elem])
+    e[side] = out
+    g["elems"][elem] = tuple(e)
+    return semi / k
+
+
 def make_svg_ppt(g, tf, title=""):
     """SVG made for copy-paste into PowerPoint: cropped to the drawing, units in pt (1 unit = 1 slide point at 1920x1080, so it lands
     at true size, 14.3 pt/mm), right edge = image plane, vertical centre = optical axis. Returns (svg, info) with the position
