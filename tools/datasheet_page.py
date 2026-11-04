@@ -163,6 +163,7 @@ def build(a):
     for i in range(2, need2 + 1):
         t.Rows(i).Height = body
     t2.Top = top2
+    t2.Top = bottom - t2.Height                      # the header row cannot be thinner than its text (65.6): pin the bottom edge to the left table's (1070)
     # ----- drawing -----
     grp.Delete()
     pic = s.Shapes.AddPicture(os.path.abspath(a.svg), False, True, 0, 0)
@@ -178,6 +179,8 @@ def build(a):
         sh.TextFrame.WordWrap = 0
         sh.TextFrame.TextRange.Text = txt
         sh.Left = 1445 - sh.Width / 2
+    # titles: the page top, the two title lines and the top of the drawing are four lines with three equal gaps (glyph middles at 1/3 and 2/3
+    # of the drawing's top); measured on the export, so adjust after the first run if the drawing size changes
     pres.Save()
     return s.SlideIndex, len(rows), len(asph)
 
