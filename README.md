@@ -310,6 +310,27 @@ lens-video-script 里每段前的 `[图N：…]`，可以直接作为页的备�
 
 **顺带修了 Mac 端的一个问题**：PowerPoint 保存的平滑如果是 0.5 秒，文件里不写时长（1 秒只写 `spd="slow"`）。`pptx_info.py` 原来把这种平滑一律当成 2 秒，`import_pptx` 会把 0.5 秒的平滑转成 2 秒的神奇移动。现在按 `spd` 读：不写为 0.5 秒，med 为 0.75 秒，slow 为 1 秒。
 
+### PowerPoint 复制的内容在飞书里粘贴不上
+
+**现象**：在 Windows 的 PowerPoint 里复制一页或几个对象，到浏览器里的飞书按 Ctrl+V，什么都没有贴上。
+
+**原因**：Microsoft 365 的 PowerPoint 复制时，除了自己的格式和 PNG、EMF 等图片，还会往剪贴板放几种网页格式：`image/svg+xml`、`Chromium Web Custom MIME Data Format`（在 Chrome 里显示成 `ppt/slides`）、`application/x-moz-custom-clipdata`。剪贴板里没有 HTML，也没有纯文字。在测试页里实测，Chrome 交给网页的是 `image/svg+xml`、`ppt/slides` 和一个 PNG 文件。飞书看到前两种就不用那张 PNG 了。
+
+**办法**：`tools/ppt_clip_cleaner.py` 在后台监视剪贴板。一检测到 PowerPoint 的复制内容，就重写剪贴板，只去掉这三种网页格式（以及源程序 OLE 对象的两项内部记录），其它格式原样保留：
+
+- 浏览器只拿到 PNG，和截图粘贴一样，飞书能正常粘贴；
+- 粘回 PowerPoint 仍是可编辑的幻灯片或对象，不会变成图片。
+
+2026-11-04 实测：复制整页，Chrome 只收到一个 PNG；粘回 PowerPoint 是完整的 9 个对象，文字可改。复制两个对象，粘回是一个文本框加一张图片。复制后一秒内处理完。
+
+**用法**（需要 pywin32；`pythonw` 要在 PATH 里）：
+
+- 双击 `tools/PPT剪贴板清理-启动.bat`，在后台运行。已经在运行时，再启动会自动退出，不会重复。
+- 双击 `tools/PPT剪贴板清理-停止.bat` 停止。
+- 只处理 PowerPoint 的复制内容，从 Word、浏览器等复制的不受影响。日志写在 `tools/ppt_clip_cleaner.log`。
+- 不会开机自启，重启电脑后要再双击一次。
+- `python tools/ppt_clip_cleaner.py --once` 只处理当前剪贴板一次。
+
 以下是之前在 Mac 上用 python-pptx 生成的测试文件验证过的结论（测试文件由 `test/make_test_pptx.py` 生成）：
 
 - **PowerPoint 的平滑导入后直接变成神奇移动**，对象真的会动（从测试视频里截取转场中间一帧确认过）。平滑的对象请在前后两页用同一个名字，名字以 `!!` 开头时强制匹配。
@@ -424,6 +445,7 @@ keynote-mcp/
   references/            近期成品文稿（.key 只在本机）、catalog.json、各课题 目录图.jpg
   materials/             成品文稿的 .key 和 .pptx 分卷压缩包（给 Windows 用）
   test/                  真机测试脚本、测试素材和输出
+  tools/                 Windows 小工具：ppt_clip_cleaner.py（PowerPoint 复制后飞书能粘贴）和启动 / 停止 .bat
   方案.md                 方案和 Windows 评估
 ```
 
