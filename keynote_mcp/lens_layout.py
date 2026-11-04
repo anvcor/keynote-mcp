@@ -1,7 +1,7 @@
 """Lens layout drawings from CODE V (Windows): .len -> VIE (3 fields, real vignetted rays) -> DXF -> clean vector art.
 
 One CODE V engine is started per call and used for every lens in it (start-up is ~10 s, each lens < 1 s).
-Outputs per lens, in the same style as the Meike 85 MIX II structure page (white 30 % fill on #2C2C2C, thin light rays):
+Outputs per lens, in the same style as the Meike 85 MIX II structure page (#6C6C6C fill on #2C2C2C, thin light rays):
   <stem>_layout.svg            editable vector art, one path per element / ray (ids E01_FCD1, ray_F2_mid_1 ...)
   <stem>_layout_labeled.svg    + glass names with bent arrows (optional)
   <stem>_layout_mm.dxf         1:1 mm CAD drawing, layers LENS / CEMENT / RAYS_* / STOP / IMAGE_PLANE / AXIS / GLASS_TEXT
@@ -389,7 +389,7 @@ def _labels(g, tf, font, outline):
 def make_svg(g, tf, labels=False, title="", outline=False):
     font = "Helvetica Neue, Helvetica, Arial, sans-serif"
     o = ['<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">', "<title>%s</title>" % title,
-         '<g id="lens_elements" fill="#FFFFFF" fill-opacity="0.30" stroke="none">']
+         '<g id="lens_elements" fill="#6C6C6C" stroke="none">']
     for i, (f, b) in enumerate(g["elems"]):
         o.append('<path id="E%02d_%s" d="%s"/>' % (i + 1, g["glass"][i], _path(elem_poly(f, b), tf, True)))
     o.append("</g>")
