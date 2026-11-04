@@ -71,6 +71,8 @@ def build_rows(g, lis):
         s0 = g["surf"][i]
         semi[s0] = abs(f[-1][1] - f[0][1]) / 2 * k
         semi[s0 + 1] = abs(b[-1][1] - b[0][1]) / 2 * k
+    for m in re.finditer(r"^\s*CIR\s+S(\d+)\s+(" + NUM + ")", lis, re.M):       # a surface with a CIR in the lens file: that is its clear semi-diameter
+        semi[int(m.group(1))] = float(m.group(2))
     rows, asph, n = [], [], 0
     for s in S:
         if s["label"] == "IMG":
@@ -128,7 +130,7 @@ def build(a):
     for i, r in enumerate(rows, 2):
         for j, v in enumerate(r, 1):
             c = t.Cell(i, j)
-            fill(c, v, size if j != 1 or len(v) < 10 else size - 2)
+            fill(c, v, size if (j != 1 and not (j == 5 and len(v) > 9)) or (j == 1 and len(v) < 10) else size - 4 if j == 5 else size - 2)
             c.Shape.TextFrame.MarginTop = c.Shape.TextFrame.MarginBottom = 1
     t.Rows(1).Height = 30
     for i in range(2, need + 1):
