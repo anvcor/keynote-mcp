@@ -5,9 +5,9 @@
 
 1. CODE V (COM) runs the macro mtfvsfld.seq at the first zoom position under the given spectrum (default = the author's
    saved spectrum "VOD"; `SPE name` only opens the spectrum option, so wavelengths and weights are set with WL / WTW / REF)
-   and exports CODE V's own chart with `WGF PNG` (2400x1350). The data table is saved next to it as text.
+   and exports CODE V's own chart with `WGF PNG` (1600x953: the 老蛙 page aspect 1.678, so the chart text has the same relative size). The data table is saved next to it as text.
 2. A page is added to DECK after slide --after, copying the neighbouring page's dark background: a full-bleed white
-   rectangle and the CODE V chart filling the page (老蛙 page 26: "Rectangle" + "MTF_INF.jpg", no other text).
+   rectangle and the CODE V chart at x 64.5, y 0.4, 1811.1 x 1079.3 (老蛙 page 26: "Rectangle" + "MTF_INF.jpg", no other text).
 """
 import argparse
 import os
@@ -20,7 +20,21 @@ from keynote_mcp import lens_layout as LL  # noqa: E402  (CodeV engine wrapper)
 MACRO = r"E:\CODEV2026\macro\mtfvsfld.seq"
 
 
-def run_mtf_png(lens, freqs, spectrum, ref_wl, png, table, size=(2400, 1350), npts=11):
+def trim_border(path, dark=60):
+    """CODE V draws a thin black frame around the chart; cut it off so it does not show on the page"""
+    from PIL import Image
+    im = Image.open(path).convert("RGB")
+    w, h = im.size
+    def is_dark(px):
+        return px[0] < dark and px[1] < dark and px[2] < dark
+    n = 0
+    while n < 12 and all(is_dark(im.getpixel((x, n))) for x in range(0, w, max(1, w // 40))):
+        n += 1
+    m = n + 2                                           # a little extra to swallow anti-aliasing
+    im.crop((m, m, w - m, h - m)).save(path)
+
+
+def run_mtf_png(lens, freqs, spectrum, ref_wl, png, table, size=(1600, 953), npts=11):
     eng = LL.CodeV()
     try:
         shutil.copyfile(lens, os.path.join(eng.dir, "s.len"))
@@ -35,6 +49,7 @@ def run_mtf_png(lens, freqs, spectrum, ref_wl, png, table, size=(2400, 1350), np
         if not os.path.isfile(src):
             raise SystemExit("CODE V 没有导出图表：\n" + out[-600:])
         shutil.copyfile(src, png)
+        trim_border(png)
     finally:
         eng.close()
     spec = " ".join("%s:%s" % (w, wt) for w, wt in spectrum)
@@ -56,7 +71,7 @@ def add_page(deck, after, png):
     rect.Name = "Rectangle"
     rect.Fill.ForeColor.RGB = 0xFFFFFF
     rect.Line.Visible = 0
-    pic = s.Shapes.AddPicture(os.path.abspath(png), False, True, 0, 0, 1920, 1080)
+    pic = s.Shapes.AddPicture(os.path.abspath(png), False, True, 64.5, 0.4, 1811.1, 1079.3)   # same box as 老蛙 page 26
     pic.Name = os.path.basename(png)
     pres.Save()
     return s.SlideIndex
