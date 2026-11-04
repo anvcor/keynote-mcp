@@ -343,10 +343,10 @@ def label_positions(g, tf, pad=0.0, align=False):
         poly = [tf(*p) for p in elem_poly(f, b)]
         top = min(poly, key=lambda q: q[1])
         near = [q[0] for q in poly if q[1] < top[1] + 3]
-        L.append(dict(i=i, x=sum(near) / len(near), ytop=top[1] - 8, extra=0.0, name=g["glass"][i], n=len(g["glass"][i]) * FS * 0.62))
+        L.append(dict(i=i, x=sum(near) / len(near), ytop=top[1], extra=0.0, name=g["glass"][i], n=len(g["glass"][i]) * FS * 0.62))
 
     def geom(l):
-        yb = l["ytop"] - 34 - l["extra"]
+        yb = l["ytop"] - 42 - l["extra"]
         x = l["x"]
         lead = [(x, l["ytop"] - 14), (x, yb), (x + 16, yb - 16)]
         sx, sy = x + 22 - 7.7, yb - 12 - 6.4
@@ -359,9 +359,9 @@ def label_positions(g, tf, pad=0.0, align=False):
         return any((p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2 < r2 for p in a for q in b)
 
     if align:      # every elbow on one row: the arrows get as long as needed, the texts form clean parallel stripes
-        row = min(l['ytop'] for l in L) - 34
+        row = min(l['ytop'] for l in L) - 42
         for l in L:
-            l['extra'] = l['ytop'] - 34 - row
+            l['extra'] = l['ytop'] - 42 - row
         return L
     G = [geom(l) for l in L]
     for _ in range(80):
@@ -384,7 +384,7 @@ def _labels(g, tf, font, outline):
     o = ['<g id="glass_labels" font-family="%s" font-size="29" fill="#FFFFFF">' % font]
     for l in L:
         x, ya = l["x"], l["ytop"]
-        yb = ya - 34 - l["extra"]
+        yb = ya - 42 - l["extra"]
         o.append('<g id="label_E%02d">' % (l["i"] + 1))
         o.append('<path d="M %.1f %.1f L %.1f %.1f L %.1f %.1f" fill="none" stroke="#FFFFFF" stroke-width="3"/>' % (x, ya - 14, x, yb, x + 22 * C, yb - 22 * S))
         o.append('<path d="M %.1f %.1f L %.1f %.1f L %.1f %.1f Z" fill="#FFFFFF"/>' % (x - 8, ya - 14, x + 8, ya - 14, x, ya))
