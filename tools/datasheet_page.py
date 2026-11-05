@@ -181,6 +181,15 @@ def build(a):
         sh.Left = 1445 - sh.Width / 2
     # titles: the page top, the two title lines and the top of the drawing are four lines with three equal gaps (glyph middles at 1/3 and 2/3
     # of the drawing's top); measured on the export, so adjust after the first run if the drawing size changes
+    # no surface uses the highest orders (all zero, e.g. A14): drop those columns and share the width among the rest
+    tb = t2.Table
+    while tb.Columns.Count > 3 and all(tb.Cell(i, tb.Columns.Count).Shape.TextFrame.TextRange.Text.strip() in ("0", "") for i in range(2, tb.Rows.Count + 1)):
+        tb.Columns(tb.Columns.Count).Delete()
+    tot = 909.7
+    for j in range(1, tb.Columns.Count + 1):
+        tb.Columns(j).Width = tot / tb.Columns.Count
+    t2.Left = 991.1
+    t2.Top = bottom - t2.Height
     pres.Save()
     return s.SlideIndex, len(rows), len(asph)
 

@@ -34,7 +34,7 @@ def trim_border(path, dark=60):
     im.crop((m, m, w - m, h - m)).save(path)
 
 
-def run_mtf_png(lens, freqs, spectrum, ref_wl, png, table, size=(1600, 953), npts=11, zoom=1):
+def run_mtf_png(lens, freqs, spectrum, ref_wl, png, table, size=(1600, 953), npts=11, zoom=1, pre=()):
     eng = LL.CodeV()
     try:
         shutil.copyfile(lens, os.path.join(eng.dir, "s.len"))
@@ -42,6 +42,8 @@ def run_mtf_png(lens, freqs, spectrum, ref_wl, png, table, size=(1600, 953), npt
         eng.cmd("WL " + " ".join(w for w, _ in spectrum))
         eng.cmd("WTW " + " ".join(wt for _, wt in spectrum))
         eng.cmd("REF %d" % ref_wl)
+        for c in pre:                                      # e.g. a title for the chart: TIT "1.7M"
+            eng.cmd(c, check=False)
         eng.cmd("WGF PNG mtfchart %d %d" % size)          # export the UCH chart the macro draws
         eng.cmd("DCS NO", check=False)
         out = eng.cmd('in "%s" %s %d %d' % (MACRO, " ".join(str(f) for f in freqs), zoom, npts), check=False)
@@ -106,6 +108,7 @@ def main():
     ap.add_argument("--model", help="line 2 above the legend, e.g. FE 35mm F1.4 GM")
     ap.add_argument("--zoom", type=int, default=1, help="CODE V zoom (focus) position: 1 = INF, 2 = next state ...")
     ap.add_argument("--tag", default="INF", help="file name tag, e.g. INF or Z2")
+    ap.add_argument("--pre", nargs="*", default=[], help='CODE V commands run before the macro, e.g. TIT "1.7M" (the chart title is the lens TITLE)')
     ap.add_argument("--freqs", type=float, nargs="+", default=[10, 30, 80])
     ap.add_argument("--spectrum", nargs="+", default=["656.3:10", "587.6:27", "546.1:29", "486.1:23", "435.8:11"])
     ap.add_argument("--ref-wl", type=int, default=3)
@@ -113,7 +116,7 @@ def main():
     os.makedirs(a.png_dir, exist_ok=True)
     png = os.path.join(a.png_dir, "%s_MTF_vs_Field_%s.png" % (a.name, a.tag))
     table = os.path.join(a.png_dir, "%s_MTF_vs_Field_%s_数据.txt" % (a.name, a.tag))
-    run_mtf_png(os.path.abspath(a.lens), a.freqs, [tuple(x.split(":")) for x in a.spectrum], a.ref_wl, png, table, zoom=a.zoom)
+    run_mtf_png(os.path.abspath(a.lens), a.freqs, [tuple(x.split(":")) for x in a.spectrum], a.ref_wl, png, table, zoom=a.zoom, pre=a.pre)
     print("MTF page is slide", add_page(a.deck, a.after, png, a.brand, a.model))
 
 

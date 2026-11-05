@@ -96,7 +96,7 @@ def build(a):
     run = LL.run_codev([lens])[0]
     g = LL.attach_glass(LL.parse_layout(run["dxf"]), run["lis"])
     g["ray_layers"] = sorted(l for l in g["rays"] if g["rays"][l])
-    tf = LL.Frame(g)
+    tf = LL.Frame(g, px_per_mm=a.ppm)
     app = w.GetActiveObject("PowerPoint.Application")
     pres = next(p for p in app.Presentations if p.Name == os.path.basename(a.deck))
     tmpl = pres.Slides(a.template_slide)
@@ -220,6 +220,7 @@ def main():
     ap.add_argument("--focus", nargs="+", required=True, help="group:direction, e.g. 2:left")
     ap.add_argument("--prefix", default="lens")
     ap.add_argument("--row-y", type=float, default=877.0)
+    ap.add_argument("--ppm", type=float, default=14.3, help="px per mm; must match the px_per_mm the SVG was exported with (a very long lens: smaller, so the 12 mm ray lead-in fits on the page)")
     a = ap.parse_args()
     print("pages:", build(a))
 

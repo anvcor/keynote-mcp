@@ -258,9 +258,11 @@ lens-video-script 里每段前的 `[图N：…]`，可以直接作为页的备�
 **路线一：Windows 上用 PowerPoint 创作，Mac 上重制 .key**（推荐，不需要 SSH，详见 [方案.md 第 4.1 节](方案.md)）
 
 1. 在 Windows 上运行同一个 `server.py`：它检测到 Windows，就改用 PowerPoint 后端（`keynote_mcp/ppt_tools.py`，通过 COM 控制本机的 PowerPoint）。Claude 照常调用 `create_presentation`、`add_slide`、`magic_move_step`、`chapter_card`、`set_notes` 这些工具，做出 .pptx。
-2. 把 .pptx 放进 Mac 的 `~/KeynoteMCP/`。
-3. 对 Claude 说「用 import_pptx 导入 xxx.pptx」。工具会转成 .key，平滑自动变成神奇移动，再按 `[动画]` 说明和 PPT 里记下的进入动画逐页重做、同步备注。
+2. 交给 Mac 前打包：项目文件夹里写一份交接说明（页面清单、素材、待确认事项，范例见 [经验/35之月.md](经验/35之月.md) 第 6 节），用 `python tools/extract_svgs.py xxx.pptx SVG素材` 把 PPT 里的 SVG 结构图连同位置导出来（Keynote 导入 pptx 不保留 SVG）。把整个项目文件夹放进 Mac 的 `~/KeynoteMCP/`。
+3. 对 Claude 说「用 import_pptx 导入 xxx.pptx」。工具会转成 .key，平滑自动变成神奇移动，再按 `[动画]` 说明和 PPT 里记下的进入动画逐页重做、同步备注；SVG 渲染成 PNG 放回原位，压缩过的图片换回原图。
 4. 人工精修后手动导出视频。
+
+每一期做下来的协作经验（会话分工、作者的反馈习惯、新页面做法、PowerPoint 的坑）记在 [经验/](经验/) 里，下一期开工前先读。
 
 ### Windows 上的 PowerPoint 后端
 
@@ -457,7 +459,14 @@ keynote-mcp/
   references/            近期成品文稿（.key 只在本机）、catalog.json、各课题 目录图.jpg
   materials/             成品文稿的 .key 和 .pptx 分卷压缩包（给 Windows 用）
   test/                  真机测试脚本、测试素材和输出
-  tools/                 Windows 小工具：ppt_clip_cleaner.py（PowerPoint 复制后飞书能粘贴）和启动 / 停止 .bat
+  tools/                 Windows 小工具：
+                           ppt_clip_cleaner.py   PowerPoint 复制后飞书能粘贴（启动 / 停止 .bat）
+                           layout_pages.py       结构图三连页（结构 / 对焦箭头 / 材料），--ppm 改比例
+                           datasheet_page.py     Surface Datasheet 页（面数据表 + 非球面表 + 小结构图）
+                           mtf_vs_field_page.py  CODE V 出 MTF vs Field 图并做成页，--pre 先跑 CODE V 命令（如图题）
+                           web_screenshot.py     无头 Chrome 按页面尺寸截网页（可先跑 JS，--scale 2 出 4K）
+                           extract_svgs.py       把 pptx 里的 SVG 图片连同位置导出来，交给 Mac 重做
+  经验/                   每一期的协作经验
   方案.md                 方案和 Windows 评估
 ```
 
