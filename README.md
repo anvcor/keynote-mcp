@@ -17,6 +17,7 @@
 | 6. 剪辑：按配音铺幻灯片视频 | Claude 调用 DaVinci Resolve 脚本 API | [skills/davinci-slide-edit](skills/davinci-slide-edit/SKILL.md) |
 | 7. 配乐 | 同上 | `skills/davinci-slide-edit/scripts/add_bgm.py` |
 | 8. 音量和声道、审片、导出成片 | Claude 在达芬奇界面里设音量和声道，作者审片、导出 | — |
+| 9. 字幕 | Claude 按配音原文生成和成片同名的 SRT（不用语音识别） | `skills/davinci-slide-edit/scripts/tts_srt.py` |
 
 每期做完把经验记进 [经验/](经验/)，下一期开工前先读。
 
@@ -484,7 +485,7 @@ keynote-mcp/
   skills/                两个 Claude skill（源文件夹 + 打包好的 .skill），说明见 skills/README.md
     lens-video-script/     陪写文稿（原 lens-video-script 仓库）
     lens-video-script-workspace/  它的 skill-creator 评测记录
-    davinci-slide-edit/    达芬奇剪辑、配乐
+    davinci-slide-edit/    达芬奇剪辑、配乐、字幕
   配音.md                 火山引擎 TTS 配音流程
   tools/                 小工具（除 tts_check_speed.py 外都是 Windows 用的）：
                            tts_check_speed.py    逐句测 TTS 配音的语速，找出念太快的句子
