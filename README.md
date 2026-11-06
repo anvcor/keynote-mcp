@@ -1,6 +1,6 @@
 # 镜头评测视频工具链
 
-> 作者为自己的镜头评测视频做的整套工具，从写稿一路到剪辑导出：写稿技能、Keynote MCP、配音流程、达芬奇剪辑技能。文档里的路径都按作者的 Mac 写，自己用时换成你的路径。许可证：GPL-3.0。
+> 作者为自己的镜头评测视频做的整套工具，从写稿一路到 B 站投稿：写稿技能、Keynote MCP、配音流程、达芬奇剪辑技能、投稿流程。文档里的路径都按作者的 Mac 写，自己用时换成你的路径。许可证：GPL-3.0。
 >
 > 2026-11-06 起，原来单独的 [lens-video-script](https://github.com/anvcor/lens-video-script) 仓库并进了这里的 `skills/`，它的提交历史一起保留（`git log 4f56148` 能看到原来的记录）。
 
@@ -18,6 +18,7 @@
 | 7. 配乐 | 同上 | `skills/davinci-slide-edit/scripts/add_bgm.py` |
 | 8. 音量和声道、审片、导出成片 | Claude 在达芬奇界面里设音量和声道，作者审片、导出 | — |
 | 9. 字幕 | Claude 按配音原文生成和成片同名的 SRT（不用语音识别） | `skills/davinci-slide-edit/scripts/tts_srt.py` |
+| 10. B 站投稿 | Claude 在作者的 Chrome 里填投稿页（视频由作者拖进去），作者确认后投稿 | [投稿.md](投稿.md)、`skills/davinci-slide-edit/scripts/chapters.py`（章节） |
 
 每期做完把经验记进 [经验/](经验/)，下一期开工前先读。
 
@@ -485,8 +486,9 @@ keynote-mcp/
   skills/                两个 Claude skill（源文件夹 + 打包好的 .skill），说明见 skills/README.md
     lens-video-script/     陪写文稿（原 lens-video-script 仓库）
     lens-video-script-workspace/  它的 skill-creator 评测记录
-    davinci-slide-edit/    达芬奇剪辑、配乐、字幕
+    davinci-slide-edit/    达芬奇剪辑、配乐、字幕、投稿章节
   配音.md                 火山引擎 TTS 配音流程
+  投稿.md                 B 站投稿流程
   tools/                 小工具（除 tts_check_speed.py 外都是 Windows 用的）：
                            tts_check_speed.py    逐句测 TTS 配音的语速，找出念太快的句子
                            ppt_clip_cleaner.py   PowerPoint 复制后飞书能粘贴（启动 / 停止 .bat）

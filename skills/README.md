@@ -5,7 +5,7 @@
 | skill | 做什么 | 源文件夹 | 上传件 |
 |---|---|---|---|
 | lens-video-script | 用作者的口吻陪写镜头评测 / 光学设计 / 行业评论视频文稿 | `lens-video-script/`（SKILL.md + references/ + evals/） | `lens-video-script.skill` |
-| davinci-slide-edit | 用 DaVinci Resolve 脚本 API 按文稿和配音剪幻灯片视频，按章节铺背景音乐，成片导出后生成字幕 | `davinci-slide-edit/`（SKILL.md + references/ + scripts/） | `davinci-slide-edit.skill` |
+| davinci-slide-edit | 用 DaVinci Resolve 脚本 API 按文稿和配音剪幻灯片视频，按章节铺背景音乐，成片导出后生成字幕和 B 站章节 | `davinci-slide-edit/`（SKILL.md + references/ + scripts/） | `davinci-slide-edit.skill` |
 
 `lens-video-script-workspace/` 是 lens-video-script 的 skill-creator 评测迭代记录。
 
@@ -37,6 +37,7 @@ davinci-slide-edit：
   - 新建工程的设置写进流程；配音来自 TTS 时直接用段落时间表。
   - `add_bgm.py`：每章一首背景音乐，对齐响度、淡入淡出，铺到 A2。
   - `tts_srt.py`：成片导出后，按 TTS 配音的原文生成同名 SRT，代替剪映语音识别。
+  - `chapters.py`：从章节卡 cue 和文稿标题生成 B 站章节文本。
 
 ## 许可证
 
