@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "每段前都有 [图N：画面建议] 标记",
+      "passed": true,
+      "evidence": "17 个 [图N：…] 标记，每段一帧"
+    },
+    {
+      "text": "包含送测声明",
+      "passed": false,
+      "evidence": "只写了用户要求的两节，送测声明仅在文件头注明留给开场，正文没有"
+    },
+    {
+      "text": "材料中的关键数据全部出现（190、0.55、31、9、165、88、98、16）",
+      "passed": true,
+      "evidence": "全部出现"
+    },
+    {
+      "text": "没有材料以外的新数值（人工核对脚本列出的可疑数字）",
+      "passed": true,
+      "evidence": "新增数字仅为对比参照（55EVO 90mm、50APO 73mm、100GM 180、85MIX2 250/24），均来自 benchmarks；F2→0.7光瞳为推算且已标注"
+    },
+    {
+      "text": "单位用中文（线对每毫米/微米），不用 lp/mm、μm",
+      "passed": true,
+      "evidence": "0 处 lp/mm/μm"
+    },
+    {
+      "text": "送测档不出现★贬损词（史、依托、不配上桌、蛤能、cjb 等）",
+      "passed": true,
+      "evidence": "无"
+    },
+    {
+      "text": "章节标题为『中文数字 + 空格 + 标题』格式",
+      "passed": true,
+      "evidence": "## 一 专利逆向与光学设计 / ## 二 性能仿真与测量"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 1,
+    "total": 7,
+    "pass_rate": 0.86
+  }
+}

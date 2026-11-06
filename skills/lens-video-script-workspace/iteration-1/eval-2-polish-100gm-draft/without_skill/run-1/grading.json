@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "保留全部原始数据（90、105、15）",
+      "passed": true,
+      "evidence": "保留"
+    },
+    {
+      "text": "修正笔误：不再出现『裂化』『会差』，05倍写作0.5倍",
+      "passed": false,
+      "evidence": "'会差'被误读为'稍差'，彗差含义丢失"
+    },
+    {
+      "text": "按帧拆段并带 [图N：画面建议]",
+      "passed": false,
+      "evidence": "无帧标记"
+    },
+    {
+      "text": "保留原结论：微距工况105DN更强，日常用100GM",
+      "passed": true,
+      "evidence": "保留"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  }
+}
