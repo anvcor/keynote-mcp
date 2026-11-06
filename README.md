@@ -1,6 +1,39 @@
-# Keynote MCP
+# 镜头评测视频工具链
 
-> 这是作者为自己的镜头评测视频（Keynote 动画 → 达芬奇剪辑）做的工具，文档里的路径都按作者的 Mac 写的，自己用时换成你的路径。许可证：GPL-3.0。
+> 作者为自己的镜头评测视频做的整套工具，从写稿一路到剪辑导出：写稿技能、Keynote MCP、配音流程、达芬奇剪辑技能。文档里的路径都按作者的 Mac 写，自己用时换成你的路径。许可证：GPL-3.0。
+>
+> 2026-11-06 起，原来单独的 [lens-video-script](https://github.com/anvcor/lens-video-script) 仓库并进了这里的 `skills/`，它的提交历史一起保留（`git log 4f56148` 能看到原来的记录）。
+
+## 一期视频的流程
+
+| 步骤 | 谁来做 | 用到的 |
+|---|---|---|
+| 1. 开题、逐帧陪写 `文稿.md` | Claude 陪作者写 | [skills/lens-video-script](skills/lens-video-script/SKILL.md) |
+| 2. 按 `[图N]` 做 Keynote 页和动画，段落写进演讲者备注 | Claude 调用本仓库的 Keynote MCP | `add_slide` `add_image` `add_text` `magic_move_step` `chapter_card` `set_notes`；[结构图规范.md](结构图规范.md)、[MTF页规范.md](MTF页规范.md) |
+| 　在 Windows 上时：先做 PowerPoint 草稿，再到 Mac 上 `import_pptx` 重做 | 同上 | 「Windows」一节、[经验/35之月.md](经验/35之月.md) |
+| 3. 检查效果 | Claude 先自查，再由作者审核 | `view_slide`（把页面渲染成图片给 Claude 看） |
+| 4. 导出动画视频 | **作者在 Keynote 里手动导出** | 「视频导出」一节 |
+| 5. 配音 | Claude 在作者的 Chrome 里操作火山引擎 TTS | [配音.md](配音.md)、`tools/tts_check_speed.py` |
+| 6. 剪辑：按配音铺幻灯片视频 | Claude 调用 DaVinci Resolve 脚本 API | [skills/davinci-slide-edit](skills/davinci-slide-edit/SKILL.md) |
+| 7. 配乐 | 同上 | `skills/davinci-slide-edit/scripts/add_bgm.py` |
+| 8. 音量和声道、审片、导出成片 | Claude 在达芬奇界面里设音量和声道，作者审片、导出 | — |
+
+每期做完把经验记进 [经验/](经验/)，下一期开工前先读。
+
+### 两个 skill 怎么装
+
+- **Claude 网页版 / 桌面版**：设置 > Skills > Upload skill，上传 `skills/` 里打包好的 `.skill`。
+- **Claude Code**：技能文件夹要放在 `~/.claude/skills/` 下。可以直接复制过去；也可以先把原来的文件夹移走，再建软链接，这样改仓库就是改技能：
+
+  ```bash
+  ln -s /Users/anvcor/Downloads/keynote-mcp/skills/davinci-slide-edit ~/.claude/skills/davinci-slide-edit
+  ```
+
+- 改了技能要重新打包 `.skill`，命令见 [skills/README.md](skills/README.md)。
+
+---
+
+# Keynote MCP
 
 让 Claude（或其它支持 MCP 的 LLM）直接在这台 Mac 上的 Keynote 里新建、编辑文稿：加页、写字、放图、做神奇移动动画、做章节卡、写演讲者备注、导出 PDF / 逐页图片 / PPTX。
 
@@ -8,18 +41,7 @@
 - **Windows 上改为控制 PowerPoint**：同一个 `server.py`，工具名和参数基本一样，做出 .pptx，再到 Mac 上用 `import_pptx` 转成 .key（见「Windows」一节）。
 - 基本功能零依赖：只用系统自带的 `/usr/bin/python3`（3.9 即可）。加构件动画另外需要 keynote-parser，装在本文件夹的 `.venv` 里（见安装第 3 步）。
 - **视频不由工具导出**：做完后由你在 Keynote 里审核效果，再手动导出（见「视频导出」一节）。
-
-## 在写稿流程里的位置
-
-| 步骤 | 谁来做 | 用到的工具 |
-|---|---|---|
-| 开题、逐帧陪写 `文稿.md` | lens-video-script skill | — |
-| 按 `[图N]` 做 Keynote 页、动画 | Claude 调用本工具 | `add_slide` `add_image` `add_text` `magic_move_step` `chapter_card` |
-| 把段落写进演讲者备注 | Claude | `set_notes` / `sync_notes_from_script` |
-| 检查效果 | Claude 先自查，再由你审核 | `view_slide`（把页面渲染成图片给 Claude 看） |
-| 文稿配图 | Claude | `export format=png` |
-| 导出动画视频 | **你在 Keynote 里手动导出** | — |
-| 达芬奇剪辑 | davinci-slide-edit skill | — |
+- 文稿配图也用它导出：`export format=png`。在整条流程里的位置见上面「一期视频的流程」。
 
 ## 安装
 
@@ -459,7 +481,13 @@ keynote-mcp/
   references/            近期成品文稿（.key 只在本机）、catalog.json、各课题 目录图.jpg
   materials/             成品文稿的 .key 和 .pptx 分卷压缩包（给 Windows 用）
   test/                  真机测试脚本、测试素材和输出
-  tools/                 Windows 小工具：
+  skills/                两个 Claude skill（源文件夹 + 打包好的 .skill），说明见 skills/README.md
+    lens-video-script/     陪写文稿（原 lens-video-script 仓库）
+    lens-video-script-workspace/  它的 skill-creator 评测记录
+    davinci-slide-edit/    达芬奇剪辑、配乐
+  配音.md                 火山引擎 TTS 配音流程
+  tools/                 小工具（除 tts_check_speed.py 外都是 Windows 用的）：
+                           tts_check_speed.py    逐句测 TTS 配音的语速，找出念太快的句子
                            ppt_clip_cleaner.py   PowerPoint 复制后飞书能粘贴（启动 / 停止 .bat）
                            layout_pages.py       结构图三连页（结构 / 对焦箭头 / 材料），--ppm 改比例
                            datasheet_page.py     Surface Datasheet 页（面数据表 + 非球面表 + 小结构图）
