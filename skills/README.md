@@ -27,6 +27,7 @@ lens-video-script：
 
 - 2026-09-25：默认口吻改为批判性评论（references/critical-voice.md），新增评论稿骨架（structure-essay.md）与飞书同步流程。
 - 2026-11-03：新增「配合 Keynote」一节：能用 keynote 工具时，逐帧把画面和备注做进 Keynote，收尾统一同步备注；视频由作者在 Keynote 里审核后手动导出。
+- 2026-11-12：默认文风改为学术论文式的批判写作（references/academic-voice.md，样板是《星曜35APO》开篇两段）；critical-voice.md 退为论证骨架和禁止清单。Windows 上开工先在后台启动 PPT 剪贴板清理工具（tools/ppt_clip_cleaner.py）。
 
 davinci-slide-edit：
 
