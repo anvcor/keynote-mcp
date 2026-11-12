@@ -1165,6 +1165,8 @@ def h_add_line(ctx, a):
     ln.Line.Weight = num(a.get("weight", 2), "weight", lo=0.25, hi=100)
     if a.get("dash"):
         ln.Line.DashStyle = 4  # msoLineDash
+    if a.get("arrow"):
+        ln.Line.EndArrowheadStyle = 2  # msoArrowheadTriangle at (x2, y2), as on template page 18
     ln.Name = uname("line")
     return _new_item_result(s, ln)
 
@@ -1689,13 +1691,15 @@ def h_product_card(ctx, a):
             it["warning"] = ("这张图不是透明背景（%s），放上去会带着白底。请先在 Photoshop 里抠好、存成透明 PNG 放进项目文件夹，"
                              "再用 update_item 的 image 换掉。" % os.path.basename(prod["image"]))
         images.append(it)
-    # white rule between the photos and the names, as on every product page of 35之月 (added by hand there):
-    # 5 pt, y 770; one product 597–1323, two products 140.9–1779.1
-    x1, x2 = (140.9, 1779.1) if two else (597.0, 1323.0)
-    ln = s.Shapes.AddLine(x1, 770.0, x2, 770.0)
-    ln.Line.ForeColor.RGB = rgb("#FFFFFF")
-    ln.Line.Weight = 5
-    ln.Name = uname("line")
+    # white rule between the photos and the names, as on every product page of 35之月: 5 pt, y 770.
+    # Two products: the sample's own "arrow" role is that rule (140.9–1779.1, triangle at the right end),
+    # so only add one when it was dropped (arrow=false: plain full-width rule) or for a single product (597–1323).
+    if not (two and "arrow" in R):
+        x1, x2 = (140.9, 1779.1) if two else (597.0, 1323.0)
+        ln = s.Shapes.AddLine(x1, 770.0, x2, 770.0)
+        ln.Line.ForeColor.RGB = rgb("#FFFFFF")
+        ln.Line.Weight = 5
+        ln.Name = uname("line")
     r = {"slide": n, "items": slide_items(s, False), "images": images,
          "note": "产品介绍页已按样例页（模板第 18 页）的版式生成：产品图底边对齐、y=770 一条 5 磅白色横线、产品名 38 号、灰色标签按文字长短自动加宽，"
                  "全部在 y=%d 的字幕参考线以上。Windows 没有 Helvetica Neue，标签宽度按替代字体算，到 Mac 上可能要微调。" % SUBTITLE_Y}
@@ -1934,7 +1938,8 @@ TOOLS = [
               "opacity": CHANGE_PROPS["opacity"], "rotation": CHANGE_PROPS["rotation"]}, ["slide"]), h_add_shape),
     ("add_line", "加一条直线（起点 x1,y1 到终点 x2,y2），默认白色 2 点。",
      _schema({"document": DOC, "slide": SLIDE, "x1": NUM, "y1": NUM, "x2": NUM, "y2": NUM, "color": COLOR,
-              "weight": {"type": "number", "description": "线宽（点），默认 2"}, "dash": {"type": "boolean", "description": "虚线"}},
+              "weight": {"type": "number", "description": "线宽（点），默认 2"}, "dash": {"type": "boolean", "description": "虚线"},
+              "arrow": {"type": "boolean", "description": "终点（x2,y2）加三角箭头。多款产品并排页的白色横线要带（模板第 18 页）"}},
              ["slide", "x1", "y1", "x2", "y2"]), h_add_line),
     ("add_table", "加一个表格，rows 是二维数组（第一行默认作表头，加粗）。白字、白色细边框、无底色，默认 24 号。",
      _schema({"document": DOC, "slide": SLIDE, "rows": {"type": "array", "items": {"type": "array"}},
