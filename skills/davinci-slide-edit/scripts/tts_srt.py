@@ -252,7 +252,10 @@ for i, s in enumerate(merged):
         nxt = merged[i + 1]["in"]
         if nxt - s["out"] < 0.3: s["out"] = nxt
         s["out"] = min(s["out"], nxt)
-    if s["out"] - s["in"] < 0.7: s["out"] = s["in"] + 0.7
+    if s["out"] - s["in"] < 0.7:
+        s["out"] = s["in"] + 0.7
+        if i + 1 < len(merged) and merged[i + 1]["in"] < s["out"]:   # 撑长的短字幕不盖住下一条：下一条顺延
+            merged[i + 1]["in"] = min(s["out"], merged[i + 1]["t1"] - 0.3)
 snap = lambda x: round(x * 60) / 60                       # 对齐到 60 fps 的帧
 def ts(x):
     ms = int(round(x * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
