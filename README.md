@@ -10,7 +10,7 @@
 |---|---|---|
 | 1. 开题、逐帧陪写 `文稿.md` | Claude 陪作者写 | [skills/lens-video-script](skills/lens-video-script/SKILL.md) |
 | 2. 按 `[图N]` 做 Keynote 页和动画，段落写进演讲者备注 | Claude 调用本仓库的 Keynote MCP | `add_slide` `add_image` `add_text` `magic_move_step` `chapter_card` `set_notes`；[结构图规范.md](结构图规范.md)、[MTF页规范.md](MTF页规范.md) |
-| 　在 Windows 上时：先做 PowerPoint 草稿，再到 Mac 上 `import_pptx` 重做 | 同上 | 「Windows」一节、[经验/35之月.md](经验/35之月.md) |
+| 　在 Windows 上时：先做 PowerPoint 草稿，再到 Mac 上 `import_pptx` 重做 | 同上 | 「Windows」一节、[经验/35之月.md](经验/35之月.md)、[经验/星曜35APO.md](经验/星曜35APO.md) |
 | 3. 检查效果 | Claude 先自查，再由作者审核 | `view_slide`（把页面渲染成图片给 Claude 看） |
 | 4. 导出动画视频 | **作者在 Keynote 里手动导出** | 「视频导出」一节 |
 | 5. 配音 | Claude 在作者的 Chrome 里操作火山引擎 TTS，按段落小块合成、测速、拼接 | [配音.md](配音.md)、`tools/tts_*.py`、`tools/tts_batch.js` |
