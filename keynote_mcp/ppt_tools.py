@@ -1685,7 +1685,9 @@ def h_product_card(ctx, a):
         w, h = _fit(pic.Width, pic.Height, max_w, max_h)
         pic.Width = w
         pic.Left = cx - pic.Width / 2.0
-        pic.Top = bottom - pic.Height
+        # centred in the photo box (y bottom-max_h .. bottom); the rule, names and badges stay where they are.
+        # A photo shorter than the box sits in its middle, not on its floor (星曜35APO, 2026-11-12).
+        pic.Top = bottom - max_h / 2.0 - pic.Height / 2.0
         it = item_json(pic, pic.ZOrderPosition, False)
         if _transparency(prod["image"]) is False:
             it["warning"] = ("这张图不是透明背景（%s），放上去会带着白底。请先在 Photoshop 里抠好、存成透明 PNG 放进项目文件夹，"
@@ -1939,7 +1941,7 @@ TOOLS = [
     ("add_line", "加一条直线（起点 x1,y1 到终点 x2,y2），默认白色 2 点。",
      _schema({"document": DOC, "slide": SLIDE, "x1": NUM, "y1": NUM, "x2": NUM, "y2": NUM, "color": COLOR,
               "weight": {"type": "number", "description": "线宽（点），默认 2"}, "dash": {"type": "boolean", "description": "虚线"},
-              "arrow": {"type": "boolean", "description": "终点（x2,y2）加三角箭头。多款产品并排页的白色横线要带（模板第 18 页）"}},
+              "arrow": {"type": "boolean", "description": "终点（x2,y2）加三角箭头。多款产品并排页的白色横线只在按时间排列（发布先后、换代）时带箭头；价格、规格对比不带"}},
              ["slide", "x1", "y1", "x2", "y2"]), h_add_line),
     ("add_table", "加一个表格，rows 是二维数组（第一行默认作表头，加粗）。白字、白色细边框、无底色，默认 24 号。",
      _schema({"document": DOC, "slide": SLIDE, "rows": {"type": "array", "items": {"type": "array"}},
@@ -2007,7 +2009,7 @@ TOOLS = [
                   "badge": {"type": "string", "description": "标签文字：Since 2026.07.08 或价格；不填则不要标签"},
                   "highlight": {"type": "string", "description": "名字里要标红的部分，可选"}}, ["name"])},
               "after": {"type": "integer", "minimum": 0, "description": "放在第几页之后，不填 = 末尾"},
-              "arrow": {"type": "boolean", "description": "两款之间的箭头，两款时默认 true"}},
+              "arrow": {"type": "boolean", "description": "两款之间横线右端的箭头，两款时默认 true。只用于和时间有关的并排（新旧款、发布先后）；价格、规格对比传 false，横线不带箭头"}},
              ["products"]), h_product_card),
     ("export_lens_layout", "用 CODE V 把 .len 镜头文件导出 2D 结构图（无穷远位、3 个视场各上/主/下 3 条光线，含渐晕），"
                            "照美科 85MIX2 那页的样式重画成矢量图：SVG（每片镜片、每条光线单独 id，Illustrator / Keynote 可直接用）、"

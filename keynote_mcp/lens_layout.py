@@ -287,8 +287,13 @@ def parse_layout(dxf_text):
         raise LayoutError("DXF 里认不出镜片轮廓（VIE 输出格式不对？）")
     axis_y = rest[0][0][1]
     half = max(abs(y - axis_y) for e in elems for y in (e[0][0][1], e[0][-1][1], e[1][0][1], e[1][-1][1]))
-    ticks = [t for t in ticks if abs(t[0][1] - axis_y) <= half * 1.05]      # drops the page's scale-bar marks
-    img = ticks.pop()
+    # image plane: the right-most vertical line that crosses the axis. It can be taller than every lens element
+    # (Leica M 35 APO: elements reach 12.1 mm, the image 21.6 mm), so pick it before the height filter below.
+    across = [t for t in ticks if min(t[0][1], t[-1][1]) < axis_y < max(t[0][1], t[-1][1])]
+    img = max(across, key=lambda t: t[0][0]) if across else None
+    ticks = [t for t in ticks if t is not img and abs(t[0][1] - axis_y) <= half * 1.05]      # drops the page's scale-bar marks
+    if img is None:
+        img = ticks.pop()
     rays = {}
     for lay in ("1", "2", "3"):
         rays[lay] = chain([p for kk, ll, p in ents if kk == "LINE" and ll == lay])
