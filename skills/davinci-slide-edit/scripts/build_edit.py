@@ -152,7 +152,11 @@ if not a.no_preview:
     vid = pool_clips(mp)[P["video_clip"]].GetClipProperty("File Path")
     pv = os.path.join(base, "preview"); os.makedirs(pv, exist_ok=True)
     for f in os.listdir(pv):
-        os.remove(os.path.join(pv, f))
+        # exFAT drives keep ._ AppleDouble files that vanish together with their main file
+        try:
+            os.remove(os.path.join(pv, f))
+        except FileNotFoundError:
+            pass
     ff = ffmpeg()
     subprocess.run([ff, "-v", "error", "-y", "-i", vid, "-vf", f"select='{sel}',scale=384:216,eq=brightness=0.08",
                     "-vsync", "0", os.path.join(pv, "src_%03d.jpg")], check=True)

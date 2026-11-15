@@ -34,7 +34,9 @@
 6. 单独选一段再打开 Clip Attributes 复查；cmd+S 保存
 7. 做完 `release_full_control`
 
-背景音乐（A2，`add_bgm.py` 铺好之后）：同样 cmd 逐个点选 A2 的几段 → Volume 填 `-15`。生成的 FLAC 已是立体声，不用改 Clip Attributes。复查时先点时间线结尾之后的空白处取消多选，再单独点一段看检查器。
+背景音乐（A2，`add_bgm.py` 铺好之后）：bgm.json 带 `duck` 时 -15 dB 和章节卡处的回升已经做进文件，检查器保持 0 dB，什么都不用设，只复查一段是 0.00、A1 仍是 -5.00。不带 `duck` 时：同样 cmd 逐个点选 A2 的几段 → Volume 填 `-15`。生成的 FLAC 已是立体声，不用改 Clip Attributes。复查时先点时间线结尾之后的空白处取消多选，再单独点一段看检查器。
+
+exFAT 移动硬盘：删一个文件时系统会顺带删掉它的 `._` 文件，`os.listdir` 后逐个删会遇到找不到的 `._xxx`，要忽略 FileNotFoundError（build_edit.py 清预览图时踩过）。
 
 ## 幻灯片视频的结构（Keynote 导出，自动播放）
 - 每页静止约 3 秒（180 帧@60fps），转场约 25–55 帧
