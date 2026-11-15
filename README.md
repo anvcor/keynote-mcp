@@ -13,7 +13,7 @@
 | 　在 Windows 上时：先做 PowerPoint 草稿，再到 Mac 上 `import_pptx` 重做 | 同上 | 「Windows」一节、[经验/35之月.md](经验/35之月.md) |
 | 3. 检查效果 | Claude 先自查，再由作者审核 | `view_slide`（把页面渲染成图片给 Claude 看） |
 | 4. 导出动画视频 | **作者在 Keynote 里手动导出** | 「视频导出」一节 |
-| 5. 配音 | Claude 在作者的 Chrome 里操作火山引擎 TTS | [配音.md](配音.md)、`tools/tts_check_speed.py` |
+| 5. 配音 | Claude 在作者的 Chrome 里操作火山引擎 TTS，按段落小块合成、测速、拼接 | [配音.md](配音.md)、`tools/tts_*.py`、`tools/tts_batch.js` |
 | 6. 剪辑：按配音铺幻灯片视频 | Claude 调用 DaVinci Resolve 脚本 API | [skills/davinci-slide-edit](skills/davinci-slide-edit/SKILL.md) |
 | 7. 配乐 | 同上 | `skills/davinci-slide-edit/scripts/add_bgm.py` |
 | 8. 音量和声道、审片、导出成片 | Claude 在达芬奇界面里设音量和声道，作者审片、导出 | — |
@@ -489,8 +489,13 @@ keynote-mcp/
     davinci-slide-edit/    达芬奇剪辑、配乐、字幕、投稿章节
   配音.md                 火山引擎 TTS 配音流程
   投稿.md                 B 站投稿流程
-  tools/                 小工具（除 tts_check_speed.py 外都是 Windows 用的）：
-                           tts_check_speed.py    逐句测 TTS 配音的语速，找出念太快的句子
+  tools/                 小工具（tts_* 两边都能用，其余是 Windows 用的）：
+                           tts_chunks.py         文稿 docx 切成 TTS 小块（一段一块、≤160 字）
+                           tts_batch.js          在火山引擎控制台页面里批量合成小块
+                           tts_recv.py           本机接收合成好的小块（127.0.0.1）
+                           tts_pace.py           Whisper 测每块吐字速度 / 成品每 30 秒语速
+                           tts_join.py           小块拼成每章 mp3 + 段落时间表.csv
+                           tts_check_speed.py    逐句测 TTS 配音的语速（不用 GPU）
                            ppt_clip_cleaner.py   PowerPoint 复制后飞书能粘贴（启动 / 停止 .bat）
                            layout_pages.py       结构图三连页（结构 / 对焦箭头 / 材料），--ppm 改比例
                            datasheet_page.py     Surface Datasheet 页（面数据表 + 非球面表 + 小结构图）
