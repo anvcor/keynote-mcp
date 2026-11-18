@@ -19,6 +19,7 @@
 | 8. 音量和声道、审片、导出成片 | Claude 在达芬奇界面里设音量和声道，作者审片、导出 | — |
 | 9. 字幕 | Claude 按配音原文生成和成片同名的 SRT（不用语音识别） | `skills/davinci-slide-edit/scripts/tts_srt.py` |
 | 10. B 站投稿 | Claude 在作者的 Chrome 里填投稿页（视频由作者拖进去），作者确认后投稿 | [投稿.md](投稿.md)、`skills/davinci-slide-edit/scripts/chapters.py`（章节） |
+| 11. 图文 | 同一篇文稿排成小红书 3:4 长图（按 18 张一篇拆）、压成知乎导入用的 docx，Claude 在作者的 Chrome 里填好，作者确认后发布 | [图文发布.md](图文发布.md)、`tools/xhs_pages.py`、`tools/zhihu_docx.py` |
 
 每期做完把经验记进 [经验/](经验/)，下一期开工前先读。
 
@@ -489,6 +490,7 @@ keynote-mcp/
     davinci-slide-edit/    达芬奇剪辑、配乐、字幕、投稿章节
   配音.md                 火山引擎 TTS 配音流程
   投稿.md                 B 站投稿流程
+  图文发布.md             小红书长图 + 知乎文章
   tools/                 小工具（tts_* 两边都能用，其余是 Windows 用的）：
                            tts_chunks.py         文稿 docx 切成 TTS 小块（一段一块、≤160 字）
                            tts_batch.js          在火山引擎控制台页面里批量合成小块
@@ -496,6 +498,8 @@ keynote-mcp/
                            tts_pace.py           Whisper 测每块吐字速度 / 成品每 30 秒语速
                            tts_join.py           小块拼成每章 mp3 + 段落时间表.csv
                            tts_check_speed.py    逐句测 TTS 配音的语速（不用 GPU）
+                           xhs_pages.py          文稿 docx 排成小红书 3:4 长图，按 18 张一篇拆
+                           zhihu_docx.py         文稿 docx 压成知乎导入用的小 docx
                            ppt_clip_cleaner.py   PowerPoint 复制后飞书能粘贴（启动 / 停止 .bat）
                            layout_pages.py       结构图三连页（结构 / 对焦箭头 / 材料），--ppm 改比例
                            datasheet_page.py     Surface Datasheet 页（面数据表 + 非球面表 + 小结构图）
